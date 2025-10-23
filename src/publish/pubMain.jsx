@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         {/* Main */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
         </Route>
         {/* Auth */}
         <Route element={<AuthLayout />}>
@@ -43,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         {/* Guide & Status */}
         <Route element={<BlankLayout />}>
           <Route path="/guide/button-guide" element={<ButtonGuide />} />
-          <Route path="/status/pub-status" element={<PubStatusPage />} />
+          <Route path="/" element={<PubStatusPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
