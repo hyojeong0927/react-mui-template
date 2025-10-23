@@ -1,0 +1,102 @@
+// ------------------------------------------
+//  Global Variables
+// ------------------------------------------
+
+// Colors
+$color-primary: #1976d2;
+$color-secondary: #9c27b0;
+$color-gray-100: #f5f5f5;
+$color-gray-900: #212121;
+
+// Font
+$font-family-base: 'Pretendard', 'Noto Sans KR', sans-serif;
+
+// Spacing scale
+$space-xxs: 4px;
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-xxl: 48px;
+
+// Border radius
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+
+// Transition
+$transition-base: all 0.3s ease;
+
+:root {
+  --transition-speed: 0.3s;
+}
+
+/* Light Theme */
+[data-theme='light'] {
+  --color-primary: #1976d2;
+  --color-secondary: #9c27b0;
+  --color-bg: #ffffff;
+  --color-text: #222222;
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+  --color-primary: #90caf9;
+  --color-secondary: #ce93d8;
+  --color-bg: #121212;
+  --color-text: #f5f5f5;
+}
+
+/* SCSS에서 바로 참조할 수 있도록 alias */
+$primary-color: var(--color-primary);
+$secondary-color: var(--color-secondary);
+$bg-color: var(--color-bg);
+$text-color: var(--color-text);
+
+/* button */
+$primary: #1976d2;
+$secondary: #e0e0e0;
+$error: #d32f2f;
+$white: #fff;
+$gray-002: #f2f2f2;
+$gray-003: #e5e5e5;
+$gray-007: #999999;
+$gray-009: #333333;
+
+$btn-link-color: #fff;
+$btn-disabled: #ccc;
+$btn-disabled-opacity: 0.5;
+
+$btn-font-family: 'Noto Sans', sans-serif;
+$btn-font-weight: 500;
+$btn-font-size: 1rem;
+$btn-line-height: 1.2;
+$btn-letter-spacing: 0.5px;
+
+$btn-padding-y: 8px;
+$btn-padding-x: 16px;
+$btn-border-radius: 12px;
+$btn-border-width: 1px;
+
+$btn-padding-y-sm: 4px;
+$btn-padding-x-sm: 12px;
+$btn-font-size-sm: 0.875rem;
+$btn-border-radius-sm: 10px;
+$btn-border-width-sm: 1px;
+
+$btn-padding-y-lg: 12px;
+$btn-padding-x-lg: 20px;
+$btn-font-size-lg: 1.125rem;
+$btn-border-radius-lg: 14px;
+$btn-border-width-lg: 1px;
+
+$btn-padding-y-xsm: 2px;
+$btn-padding-x-xsm: 8px;
+$btn-font-size-xsm: 0.75rem;
+$btn-border-radius-xsm: 8px;
+
+$btn-padding-y-xxsm: 2px;
+$btn-padding-x-xxsm: 8px;
+$btn-font-size-xxsm: 0.6875rem;
+$btn-border-radius-xxsm: 6px;

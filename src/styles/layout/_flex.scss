@@ -1,0 +1,113 @@
+@use 'sass:math';
+@use './functions' as *;
+
+/* Flex
+========================================================================== */
+@mixin flex(
+  $direction: 'row',
+  // 'row' | 'column'
+  $justify: 'start',
+  // start | center | end | between | around | evenly
+  $align: 'start',
+  // start | center | end | baseline | stretch
+  $gap: 0px,
+  // 숫자
+  $wrap: 'nowrap',
+  // nowrap | wrap | wrap-reverse
+  $alignContent: null // stretch | center | start | end | between | around
+) {
+  display: flex;
+
+  // Direction
+  @if $direction == 'column' or $direction == 'col' {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
+
+  // Justify map
+  $justify-map: (
+    start: flex-start,
+    center: center,
+    end: flex-end,
+    between: space-between,
+    around: space-around,
+    evenly: space-evenly,
+  );
+  justify-content: if(
+    map-has-key($justify-map, $justify),
+    map-get($justify-map, $justify),
+    flex-start
+  );
+
+  // Align map
+  $align-map: (
+    start: flex-start,
+    center: center,
+    end: flex-end,
+    baseline: baseline,
+    stretch: stretch,
+  );
+  align-items: if(
+    map-has-key($align-map, $align),
+    map-get($align-map, $align),
+    normal
+  );
+
+  // Wrap
+  flex-wrap: $wrap;
+
+  // Align Content (optional)
+  @if $alignContent != null {
+    $align-content-map: (
+      start: flex-start,
+      center: center,
+      end: flex-end,
+      between: space-between,
+      around: space-around,
+      stretch: stretch,
+    );
+    align-content: if(
+      map-has-key($align-content-map, $alignContent),
+      map-get($align-content-map, $alignContent),
+      stretch
+    );
+  }
+
+  gap: $gap;
+
+  // 내부 커스텀 스타일
+  @content;
+}
+
+// --------------------------------------------------
+// flex presets
+// --------------------------------------------------
+@mixin flex-center {
+  @include flex('row', 'center', 'center');
+}
+
+@mixin flex-between {
+  @include flex('row', 'between', 'center');
+}
+
+@mixin flex-column-center {
+  @include flex('column', 'center', 'center');
+}
+
+// --------------------------------------------------
+// 예시
+// --------------------------------------------------
+// @use './layout/flex' as *;
+
+// .container {
+//   @include flex('row', 'between', 'center', 16px);
+// }
+
+//  @content;
+// .card {
+//   @include flex('column', 'center', 'center', 12px) {
+//     background-color: #fafafa;
+//     border-radius: 8px;
+//   }
+// }

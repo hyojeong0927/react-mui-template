@@ -28,7 +28,7 @@ npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 
 # SCSS 사용
 
-npm install sass
+npm install -D sass
 
 # react-router-dom (페이지 라우팅용)
 

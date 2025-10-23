@@ -1,0 +1,126 @@
+// ------------------------------------------
+//  Button
+// ------------------------------------------
+@use 'sass:list';
+@use './button-variables' as btnVars;
+
+%button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: vars.$btn-font-weight;
+  line-height: vars.$btn-line-height;
+  letter-spacing: rem(vars.$btn-letter-spacing);
+  font-family: vars.$btn-font-family;
+  border-style: solid;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+%button-disabled {
+  opacity: vars.$btn-disabled-opacity;
+  cursor: not-allowed;
+}
+
+.btn {
+  @extend %button-base;
+
+  // sizes
+  @each $bs, $values in btnVars.$button-size {
+    &.btn-#{$bs} {
+      padding: rem(list.nth($values, 3)) rem(list.nth($values, 4));
+      min-width: rem(list.nth($values, 1));
+      height: rem(list.nth($values, 2));
+      font-size: list.nth($values, 5);
+      border-radius: list.nth($values, 6);
+      border-width: list.nth($values, 7);
+    }
+  }
+
+  // types
+  @each $bt, $colors in btnVars.$button-types {
+    &.btn-#{$bt} {
+      color: list.nth($colors, 3);
+      background-color: list.nth($colors, 1);
+      border-color: list.nth($colors, 2);
+
+      &:hover:not([disabled]),
+      &:focus:not([disabled]),
+      &:active:not([disabled]),
+      &.active:not([disabled]) {
+        color: if(
+          $bt == 'outline' or $bt == 'grid',
+          list.nth($colors, 4),
+          list.nth($colors, 3)
+        );
+        background-color: if(
+          $bt == 'outline' or $bt == 'grid',
+          list.nth($colors, 1),
+          list.nth($colors, 4)
+        );
+        border-color: list.nth($colors, 4);
+
+        @if $bt == 'outline--round' {
+          color: list.nth($colors, 1);
+        }
+      }
+
+      &[disabled] {
+        color: if(
+          $bt == 'outline' or $bt == 'outline--round' or $bt == 'grid',
+          list.nth($colors, 5),
+          list.nth($colors, 3)
+        );
+        border-color: list.nth($colors, 5);
+        background-color: if(
+          $bt == 'outline' or $bt == 'outline--round' or $bt == 'grid',
+          list.nth($colors, 1),
+          list.nth($colors, 5)
+        );
+        @extend %button-disabled;
+      }
+
+      @if $bt == 'icon' or $bt == 'more' {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background-color: list.nth($colors, 1);
+      }
+      @if $bt == 'more' {
+        position: relative;
+        padding-right: rem(28px);
+        &::after {
+          content: '...'; // 실제 아이콘이나 믹스인 사용 가능
+        }
+      }
+    }
+  }
+  // spinner
+  .spinner {
+    width: btnVars.$btn-spinner-size;
+    height: btnVars.$btn-spinner-size;
+    border: btnVars.$btn-spinner-border solid btnVars.$btn-spinner-color;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// 버튼 영역 flex
+.top-btn-area {
+  @include flex(true, 'end', 'center', rem(8px));
+  margin-bottom: rem(18px);
+}
+.bottom-btn-area {
+  @include flex(true, 'end', 'center', rem(8px));
+  margin-top: rem(16px);
+}

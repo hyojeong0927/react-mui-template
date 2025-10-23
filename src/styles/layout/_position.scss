@@ -1,0 +1,82 @@
+/* Position
+========================================================================== */
+
+@mixin position(
+  $type: 'relative',
+  // relative | absolute | fixed | sticky
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $zIndex: null,
+  $transform: null // translate(-50%, -50%)
+) {
+  position: $type;
+
+  // 좌표값 처리
+  @if $top != null {
+    top: $top;
+  }
+  @if $right != null {
+    right: $right;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+  @if $left != null {
+    left: $left;
+  }
+
+  // z-index
+  @if $zIndex != null {
+    z-index: $zIndex;
+  }
+
+  // transform
+  @if $transform != null {
+    transform: $transform;
+  }
+
+  // 내부 스타일 포함 가능
+  @content;
+}
+
+// --------------------------------------------------
+// position presets
+// --------------------------------------------------
+
+// 중앙 정렬 (absolute)
+@mixin absolute-center($zIndex: null) {
+  @include position(
+    'absolute',
+    50%,
+    null,
+    null,
+    50%,
+    $zIndex,
+    translate(-50%, -50%)
+  );
+}
+
+// 중앙 정렬 (fixed)
+@mixin fixed-center($zIndex: null) {
+  @include position(
+    'fixed',
+    50%,
+    null,
+    null,
+    50%,
+    $zIndex,
+    translate(-50%, -50%)
+  );
+}
+
+// 꽉 채우기 (absolute)
+@mixin absolute-fill($zIndex: null) {
+  @include position('absolute', 0, 0, 0, 0, $zIndex);
+}
+
+// sticky 상단 고정
+@mixin sticky-top($top: 0, $zIndex: null) {
+  @include position('sticky', $top: $top, $zIndex: $zIndex);
+}

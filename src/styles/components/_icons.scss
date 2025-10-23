@@ -1,0 +1,51 @@
+@use 'sass:map';
+@use 'sass:list';
+
+/* Icons
+========================================================================== */
+$icons: (
+  // header
+  h1-logo: (64px, 50px, 'svg')
+);
+
+// icon
+@mixin icon-base {
+  display: inline-block;
+  padding: 0;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+}
+.icon {
+  @include icon-base;
+}
+// icon 경로
+@function icon-path($name, $ext) {
+  @return '#{$img-root}/images/#{$ext}/#{$name}.#{$ext}';
+}
+
+@mixin icons($name) {
+  @include icon-base;
+
+  @if map.has-key($icons, $name) {
+    $props: map.get($icons, $name);
+
+    $width: list.nth($props, 1);
+    $height: list.nth($props, 2);
+    $ext: list.nth($props, 3);
+
+    width: rem($width);
+    height: rem($height);
+    // background-size: $width $height;
+    background-image: url(icon-path($name, $ext));
+  } @else {
+    @error "icons() mixin: '#{$name}' 아이콘이 $icons에 없습니다.";
+  }
+}
+
+@each $name, $props in $icons {
+  .icon.#{$name} {
+    @include icons($name);
+  }
+}
