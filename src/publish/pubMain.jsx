@@ -10,9 +10,10 @@ import DashboardLayout from '@/publish/layouts/DashboardLayout';
 import DefaultLayout from '@/publish/layouts/DefaultLayout';
 import BlankLayout from '@/publish/layouts/BlankLayout';
 
-// guide & status
-import ButtonGuide from '@/publish/guide/ButtonGuide';
+// status & guide
 import PubStatusPage from '@/publish/status/PubStatusPage';
+import GuideIndex from './guide/GuideIndex';
+import ButtonGuide from '@/publish/guide/ButtonGuide';
 
 // pages
 import Home from '@/publish/pages/Home';
@@ -26,24 +27,25 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         {/* Main */}
         <Route element={<MainLayout />}>
-          <Route path="/Home" element={<Home />} />
+          <Route path="/pages/home" element={<Home />} />
         </Route>
         {/* Auth */}
         <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
+          <Route path="/pages/login" element={<Login />} />
         </Route>
         {/* Dashboard */}
         <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/pages/dashboard" element={<Dashboard />} />
+        </Route>
+        {/* Guide & Status */}
+        <Route element={<BlankLayout />}>
+          <Route path="/" element={<PubStatusPage />} />
+          <Route path="/guide/button-guide" element={<ButtonGuide />} />
+          <Route path="/guide" element={<GuideIndex />} />
         </Route>
         {/* Pages */}
         <Route element={<DefaultLayout />}>
           <Route path="/pages/card" element={<Card />} />
-        </Route>
-        {/* Guide & Status */}
-        <Route element={<BlankLayout />}>
-          <Route path="/guide/button-guide" element={<ButtonGuide />} />
-          <Route path="/" element={<PubStatusPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -132,6 +132,11 @@ export default function PubStatusPage() {
     <div className="pub-status">
       <header className="pub-status__header">
         <h1 className="pub-status__title">퍼블 현황</h1>
+        <div className="pub-status__title-link">
+          <a href="/publish/guide" target="_blank" rel="noopener noreferrer">
+            Guide
+          </a>
+        </div>
       </header>
 
       {/* 요약 */}
@@ -243,7 +248,7 @@ export default function PubStatusPage() {
                     <td key={col.key}>
                       {col.key === 'fileName' ? (
                         <a
-                          href={row.fileUrl}
+                          href={`/publish/${row.folder}${row.fileUrl}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
