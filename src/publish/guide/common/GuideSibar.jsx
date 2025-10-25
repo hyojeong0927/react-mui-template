@@ -11,8 +11,8 @@ export default function GuideSibar() {
       id: 'guide',
       label: 'Guide',
       children: [
-        { id: 'rule', label: 'Rule', to: '/guide/rule' },
-        { id: 'term', label: 'Term', to: '/guide/term' },
+        { id: 'rule', label: 'Rule', to: '/guide' },
+        // { id: 'term', label: 'Term', to: '/guide/term' },
       ],
     },
     {
@@ -22,9 +22,9 @@ export default function GuideSibar() {
         {
           id: 'agree',
           label: 'Agree Form',
-          to: '/guide/components/guide-agree',
+          to: '/guide/guide-agree',
         },
-        { id: 'button', label: 'Button', to: '/guide/components/guide-button' },
+        { id: 'button', label: 'Button', to: '/guide/guide-button' },
       ],
     },
   ];
@@ -50,10 +50,10 @@ export default function GuideSibar() {
             return (
               <li
                 key={item.id}
-                className={`guide-sidebar__item ${isOpen ? 'guide-sidebar__item--open' : ''}`}
+                className={`guide-sidebar__item ${isOpen ? 'open' : ''}`}
               >
                 <span
-                  className="guide-sidebar__link"
+                  className={`guide-sidebar__link ${isOpen ? 'active' : ''}`}
                   onClick={() => handleToggle(item.id)}
                 >
                   {item.label}
@@ -66,7 +66,7 @@ export default function GuideSibar() {
                         <NavLink
                           to={sub.to}
                           className={({ isActive }) =>
-                            `guide-sidebar__sublink ${isActive ? 'guide-sidebar__sublink--active' : ''}`
+                            `guide-sidebar__sublink ${isActive ? 'active' : ''}`
                           }
                         >
                           {sub.label}

@@ -7,7 +7,9 @@
   a {
     text-decoration: none;
   }
-
+  li {
+    list-style: none;
+  }
   .guide-header {
     display: flex;
     align-items: center;
@@ -39,33 +41,44 @@
     }
 
     &__item {
-      &--open {
+      padding: 5px 0;
+      &.open {
         > .guide-sidebar__sublist {
-          max-height: 1000px; // 충분히 큰 값
+          max-height: 1000px;
         }
       }
     }
 
     &__sublist {
-      max-height: 0;
       overflow: hidden;
+      max-height: 0;
       transition: max-height 0.3s ease;
-      padding-left: 10px;
     }
 
     &__subitem {
-      margin: 4px 0;
+      margin: 10px 0;
     }
 
-    &__link,
+    &__link {
+      cursor: pointer;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      &.active {
+        color: #000;
+        font-weight: bold;
+      }
+    }
     &__sublink {
       display: block;
       padding: 6px 10px;
       color: #333;
+      font-size: 0.8rem;
+      border-radius: 3px;
+      background-color: #fff;
 
-      &--active {
+      &.active {
         font-weight: bold;
-        color: #000;
+        background-color: #ddd;
       }
     }
   }

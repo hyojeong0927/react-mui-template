@@ -1,10 +1,11 @@
-import Button from '@/publish/components/Button';
+// import Button from '@/publish/components/Button';
 // import { ReactComponent as IconLeft } from '@/assets/icon-left.svg';
 
 export default function ButtonGuide() {
   return (
     <>
-      <Button variant="primary" size="md" onClick={() => alert('Clicked!')}>
+      버튼
+      {/* <Button variant="primary" size="md" onClick={() => alert('Clicked!')}>
         기본 버튼
       </Button>
 
@@ -18,7 +19,7 @@ export default function ButtonGuide() {
 
       <Button variant="danger" size="md" loading loadingText="저장중...">
         로딩 버튼
-      </Button>
+      </Button> */}
     </>
   );
 }

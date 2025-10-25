@@ -12,9 +12,12 @@ import BlankLayout from '@/publish/layouts/BlankLayout';
 
 // status & guide
 import PubStatusPage from '@/publish/status/PubStatusPage';
-import GuideIndex from './guide/GuideIndex';
-import GuideRule from './guide/Rule';
+import GuideIndex from '@/publish/guide/GuideIndex';
+
+// guide
+import AgreeGuide from '@/publish/guide/components/AgreeGuide';
 import ButtonGuide from '@/publish/guide/components/ButtonGuide';
+import GuideRule from '@/publish/guide/Rule';
 
 // pages
 import Home from '@/publish/pages/Home';
@@ -48,6 +51,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           {/* Guide */}
           <Route path="/guide" element={<GuideIndex />}>
             <Route index element={<GuideRule />} />
+            <Route path="guide-agree" element={<AgreeGuide />} />
             <Route path="guide-button" element={<ButtonGuide />} />
           </Route>
         </Route>
