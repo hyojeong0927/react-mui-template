@@ -27,7 +27,7 @@ $button-size: (
   )
 );
 $button-types: (
-  // color : font color, bg, hover, disabled text, disabled bg, opacity
+  // color : text color, bg, hover, disabled text, disabled bg, opacity
   primary: (
       btnVars.$btn-primary-text,
       btnVars.$btn-primary-bg,
@@ -62,7 +62,7 @@ $button-types: (
   )
 );
 
-// button base style
+/* button base style */
 %button-base {
   display: inline-flex;
   align-items: center;
@@ -83,6 +83,7 @@ $button-types: (
 .button {
   @extend %button-base;
 
+  /* ========== Size ========== */
   @each $bs, $values in $button-size {
     &.btn-#{$bs} {
       padding: rem(list.nth($values, 2)) rem(list.nth($values, 1));
@@ -91,6 +92,7 @@ $button-types: (
     }
   }
 
+  /* ========== Type ========== */
   @each $bt, $colors in $button-types {
     &.btn-#{$bt} {
       color: list.nth($colors, 1);
