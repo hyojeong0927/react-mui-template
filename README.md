@@ -50,3 +50,11 @@ Reactjs code snippets
 Vue
 Vue 3 Snippets
 Vue VSCode Sinppets
+
+# 현황판
+
+http://localhost:5173/publish
+
+# 가이드
+
+http://localhost:5173/publish/guide
