@@ -78,6 +78,12 @@ $button-types: (
     border-color 0.25s ease;
   border: none;
   cursor: pointer;
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
 }
 
 .button {
@@ -127,6 +133,7 @@ $button-types: (
 
   /* 로딩 스피너 */
   .spinner {
+    display: inline-block;
     width: 16px;
     height: 16px;
     border: 2px solid #fff;

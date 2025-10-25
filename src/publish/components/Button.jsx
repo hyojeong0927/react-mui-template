@@ -36,15 +36,15 @@ export default function Button({
       {...props}
     >
       {loading ? (
-        <span className="inline-flex items-center gap-2">
-          <span className="spinner" />
+        <span className="btn-icon">
+          <i className="spinner" />
           {loadingText}
         </span>
       ) : (
         <>
-          {iconLeft && <span>{iconLeft}</span>}
+          {iconLeft && <span className="btn-icon">{iconLeft}</span>}
           <span>{children}</span>
-          {iconRight && <span>{iconRight}</span>}
+          {iconRight && <span className="btn-icon">{iconRight}</span>}
         </>
       )}
     </MuiButton>

@@ -28,7 +28,7 @@
   }
   .guide-main {
     flex: 1;
-    padding: 16px;
+    padding: 16px 20px;
   }
   .guide-sidebar {
     overflow-y: auto;
@@ -79,6 +79,16 @@
       &.active {
         font-weight: bold;
         background-color: #ddd;
+      }
+    }
+  }
+  .guide-page {
+    &__title {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #000;
+      h1 {
+        font-size: 1.3rem;
       }
     }
   }
