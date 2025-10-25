@@ -1,5 +1,3 @@
-function Card() {
+export default function Card() {
   return <div></div>;
 }
-
-export default Card;

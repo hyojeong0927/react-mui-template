@@ -4,7 +4,7 @@ import Main from '@/publish/components/layout/Main';
 import Header from '@/publish/components/layout/Header';
 import Footer from '@/publish/components/layout/Footer';
 
-function Layout() {
+export default function Layout() {
   return (
     <Container>
       <Header />
@@ -15,4 +15,3 @@ function Layout() {
     </Container>
   );
 }
-export default Layout;

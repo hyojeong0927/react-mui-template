@@ -1,10 +1,9 @@
 import { Outlet } from 'react-router-dom';
 
-function BlankLayout() {
+export default function BlankLayout() {
   return (
     <>
       <Outlet />
     </>
   );
 }
-export default BlankLayout;
