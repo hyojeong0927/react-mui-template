@@ -1,157 +1,49 @@
 // ------------------------------------------
 //  Button Variables
 // ------------------------------------------
-@use '../abstracts/variables' as vars;
 
-// 색상
+$btn-font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+
+$btn-font-size-sm: 13px;
+$btn-font-size-md: 15px;
+$btn-font-size-lg: 17px;
+
+$btn-font-weight: 500;
+$btn-line-height: 1.4;
+$btn-letter-spacing: 0.5px;
+
+$btn-padding-sm-x: 12px;
+$btn-padding-sm-y: 6px;
+$btn-padding-md-x: 16px;
+$btn-padding-md-y: 8px;
+$btn-padding-lg-x: 20px;
+$btn-padding-lg-y: 10px;
+
+/* border */
+$btn-radius-sm: 3px;
+$btn-radius-md: 6px;
+$btn-radius-lg: 8px;
+
+/* 색상 */
+$btn-primary-text: #fff;
 $btn-primary-bg: #1976d2;
 $btn-primary-hover: #1565c0;
-$btn-primary-color: #fff;
 
-$btn-secondary-bg: #e0e0e0;
-$btn-secondary-hover: #ccc;
-$btn-secondary-color: #333;
+$btn-secondary-text: #fff;
+$btn-secondary-bg: #9c27b0;
+$btn-secondary-hover: #1565c0;
 
-$btn-outline-border: #ccc;
-$btn-outline-bg: #fff;
-$btn-outline-color: #333;
-$btn-outline-hover: #f5f5f5;
-
+$btn-danger-text: #fff;
 $btn-danger-bg: #d32f2f;
 $btn-danger-hover: #b71c1c;
-$btn-danger-color: #fff;
 
-// border radius
-$btn-radius: 12px;
+$btn-outline-text: #1976d2;
+$btn-outline-bg: transparent;
+$btn-outline-hover: #e3f2fd;
 
-// gap between icon & text
-$btn-gap: 8px;
+$btn-disabled-bg: #d9d9d9;
+$btn-disabled-text: #999;
 
-// sizes
-$btn-size-sm: (
-  padding: 4px 12px,
-  font-size: 0.875rem,
-);
-$btn-size-md: (
-  padding: 8px 16px,
-  font-size: 1rem,
-);
-$btn-size-lg: (
-  padding: 12px 20px,
-  font-size: 1.125rem,
-);
-
-// spinner
-$btn-spinner-size: 16px;
-$btn-spinner-border: 2px;
-$btn-spinner-color: currentColor;
-@use '../abstracts/variables' as vars;
-
-// button size map: width, height, padding-y, padding-x, font-size, radius, border
-$button-size: (
-  lg: (
-    96px,
-    42px,
-    vars.$btn-padding-y-lg,
-    vars.$btn-padding-x-lg,
-    vars.$btn-font-size-lg,
-    vars.$btn-border-radius-lg,
-    vars.$btn-border-width-lg,
-  ),
-  md: (
-    84px,
-    38px,
-    vars.$btn-padding-y,
-    vars.$btn-padding-x,
-    vars.$btn-font-size,
-    vars.$btn-border-radius,
-    vars.$btn-border-width,
-  ),
-  sm: (
-    53px,
-    32px,
-    vars.$btn-padding-y-sm,
-    vars.$btn-padding-x-sm,
-    vars.$btn-font-size-sm,
-    vars.$btn-border-radius-sm,
-    vars.$btn-border-width-sm,
-  ),
-  xsm: (
-    49px,
-    28px,
-    vars.$btn-padding-y-xsm,
-    vars.$btn-padding-x-xsm,
-    vars.$btn-font-size-xsm,
-    vars.$btn-border-radius-xsm,
-    vars.$btn-border-width-sm,
-  ),
-  xxsm: (
-    50px,
-    26px,
-    vars.$btn-padding-y-xxsm,
-    vars.$btn-padding-x-xxsm,
-    vars.$btn-font-size-xxsm,
-    vars.$btn-border-radius-xxsm,
-    vars.$btn-border-width-sm,
-  ),
-);
-
-// button type map: bg, border, font, hover, disabled
-$button-types: (
-  primary: (
-    vars.$secondary,
-    vars.$secondary,
-    vars.$btn-link-color,
-    vars.$gray-009,
-    vars.$btn-disabled,
-  ),
-  secondary: (
-    vars.$primary,
-    vars.$primary,
-    vars.$btn-link-color,
-    vars.$gray-009,
-    vars.$gray-007,
-  ),
-  error: (
-    vars.$error,
-    vars.$error,
-    vars.$btn-link-color,
-    vars.$gray-009,
-    vars.$gray-007,
-  ),
-  outline: (
-    vars.$white,
-    vars.$secondary,
-    vars.$secondary,
-    vars.$gray-009,
-    vars.$btn-disabled,
-  ),
-  outline--round: (
-    vars.$white,
-    vars.$gray-003,
-    vars.$gray-002,
-    vars.$primary,
-    vars.$btn-disabled,
-  ),
-  grid: (
-    vars.$primary,
-    vars.$gray-009,
-    vars.$gray-009,
-    vars.$gray-002,
-    vars.$gray-007,
-  ),
-  icon: (
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-  ),
-  more: (
-    transparent,
-    transparent,
-    vars.$primary,
-    vars.$primary,
-    vars.$primary,
-  ),
-);
+/* disabled */
+$btn-disabled-opacity: 0.5;
+$btn-disabled-filter: brightness(0.9);

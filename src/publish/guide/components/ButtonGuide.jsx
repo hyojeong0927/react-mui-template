@@ -1,25 +1,22 @@
-// import Button from '@/publish/components/Button';
-// import { ReactComponent as IconLeft } from '@/assets/icon-left.svg';
+import Button from '@/publish/components/Button';
 
 export default function ButtonGuide() {
   return (
     <>
       버튼
-      {/* <Button variant="primary" size="md" onClick={() => alert('Clicked!')}>
-        기본 버튼
-      </Button>
+      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+        <Button variant="primary">기본 버튼</Button>
+        <Button variant="secondary">보조 버튼</Button>
+        <Button variant="outline">외곽선 버튼</Button>
+        <Button variant="danger">위험 버튼</Button>
 
-      <Button variant="secondary" size="sm" iconLeft={<IconLeft />}>
-        아이콘 버튼
-      </Button>
+        <Button size="sm">작은 버튼</Button>
+        <Button size="lg" fullWidth>
+          큰 버튼 (풀사이즈)
+        </Button>
 
-      <Button variant="outline" size="lg" fullWidth>
-        풀 너비 버튼
-      </Button>
-
-      <Button variant="danger" size="md" loading loadingText="저장중...">
-        로딩 버튼
-      </Button> */}
+        <Button disabled>비활성화</Button>
+      </div>
     </>
   );
 }

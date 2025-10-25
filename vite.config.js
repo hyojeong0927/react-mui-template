@@ -20,6 +20,7 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
+        includePaths: [path.resolve(__dirname, 'src/styles')],
         // additionalData: `@import "src/styles/abstracts/_variables.scss";`,
       },
     },

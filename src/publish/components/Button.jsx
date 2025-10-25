@@ -1,10 +1,10 @@
 import MuiButton from '@mui/material/Button';
-// import '@/styles/components/button/button.scss';
+import '@/styles/components/button/button.scss';
 
 export default function Button({
   type = 'button',
-  variant = 'primary', // primary | secondary | outline | danger
-  size = 'md', // sm | md | lg
+  variant = 'primary',
+  size = 'md',
   disabled = false,
   loading = false,
   fullWidth = false,
@@ -18,8 +18,8 @@ export default function Button({
 }) {
   const classes = [
     'button',
-    variant,
-    size,
+    `btn-${variant}`,
+    `btn-${size}`,
     fullWidth ? 'fullWidth' : '',
     disabled || loading ? 'disabled' : '',
     className,
