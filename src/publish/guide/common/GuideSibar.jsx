@@ -1,7 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { List, ListItemButton, ListItemText, Collapse } from '@mui/material';
-import { ExpandLess, ExpandMore, Menu } from '@mui/icons-material';
+import {
+  ExpandLess,
+  ExpandMore,
+  ChevronRight,
+  ChevronLeft,
+} from '@mui/icons-material';
 import '../guide.scss';
 
 export default function GuideSidebar() {
@@ -44,7 +49,7 @@ export default function GuideSidebar() {
     <aside className={`guide-sidebar ${collapsed ? 'collapsed' : ''}`}>
       {/* 사이드바 토글 버튼 */}
       <div className="sidebar-toggle" onClick={toggleSidebar}>
-        <Menu />
+        {collapsed ? <ChevronRight /> : <ChevronLeft />}
       </div>
 
       <List component="nav" className="guide-sidebar__nav">

@@ -41,16 +41,27 @@
   }
   .guide-sidebar {
     overflow-y: auto;
-    width: 240px;
+    width: 220px;
     height: calc(100vh - 50px);
     background-color: #f7f7f7;
     transition: width 0.3s;
     &.collapsed {
-      width: 60px;
+      width: 45px;
       justify-content: center;
     }
     &:not(.collapsed) {
       justify-content: flex-start;
+    }
+    .sidebar-toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 10px;
+      svg {
+        border: 1px solid #ddd;
+        background-color: #fff;
+      }
     }
     &__nav {
       padding: 16px;
@@ -70,12 +81,23 @@
     }
 
     &__subitem {
-      margin: 10px 0;
+      display: block;
+      margin: 0 0 10px;
+      background-color: #fff;
+      .MuiTypography-root {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      &.active {
+        background-color: #ddd;
+        .MuiTypography-root {
+          font-weight: bold;
+        }
+      }
     }
 
     &__link {
       cursor: pointer;
-      margin-bottom: 10px;
       color: #666;
       font-size: 0.9rem;
       .MuiListItemButton-root {
