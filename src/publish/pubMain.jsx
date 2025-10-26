@@ -17,7 +17,9 @@ import GuideIndex from '@/publish/guide/GuideIndex';
 // guide
 import AgreeGuide from '@/publish/guide/components/AgreeGuide';
 import ButtonGuide from '@/publish/guide/components/ButtonGuide';
-import GuideRule from '@/publish/guide/Rule';
+import RuleGuide from '@/publish/guide/Rule';
+import TermGuide from '@/publish/guide/Term';
+import BoxGuide from '@/publish/guide/common/Box';
 
 // pages
 import Home from '@/publish/pages/Home';
@@ -50,7 +52,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           {/* Guide */}
           <Route path="/guide" element={<GuideIndex />}>
-            <Route index element={<GuideRule />} />
+            <Route index element={<RuleGuide />} />
+            <Route path="guide-term" element={<TermGuide />} />
+            <Route path="guide-box" element={<BoxGuide />} />
             <Route path="guide-agree" element={<AgreeGuide />} />
             <Route path="guide-button" element={<ButtonGuide />} />
           </Route>

@@ -1,8 +1,8 @@
-export default function Rule() {
+export default function Box() {
   return (
     <>
       <div className="guide-page__title">
-        <h2>Rule</h2>
+        <h2>Box</h2>
       </div>
       {/* box */}
       <div className="guide-page__box">

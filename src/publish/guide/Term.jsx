@@ -1,10 +1,10 @@
-export default function Rule() {
+export default function Term() {
   return (
     <>
       <div className="guide-page__title">
-        <h2>Rule</h2>
+        <h2>Term</h2>
       </div>
-      {/* box */}
+      {/* term */}
       <div className="guide-page__box">
         <div className="guide-page__box--tit">
           <h3>제목</h3>

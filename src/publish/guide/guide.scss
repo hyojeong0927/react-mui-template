@@ -16,13 +16,22 @@
     padding: 0 10px;
     width: 100%;
     height: 50px;
-    background-color: #000;
+    background-color: #444;
 
     .guide-logo {
-      .link {
+      display: block;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-left: 155px;
+      a {
         display: block;
-        color: #fff;
-        font-size: 1.2rem;
+        color: #f7f7f7;
+        font-size: 0.9rem;
       }
     }
   }
@@ -32,10 +41,17 @@
   }
   .guide-sidebar {
     overflow-y: auto;
-    width: 200px;
+    width: 240px;
     height: calc(100vh - 50px);
     background-color: #f7f7f7;
-
+    transition: width 0.3s;
+    &.collapsed {
+      width: 60px;
+      justify-content: center;
+    }
+    &:not(.collapsed) {
+      justify-content: flex-start;
+    }
     &__nav {
       padding: 16px;
     }
@@ -50,9 +66,7 @@
     }
 
     &__sublist {
-      overflow: hidden;
-      max-height: 0;
-      transition: max-height 0.3s ease;
+      padding: 0;
     }
 
     &__subitem {
@@ -62,23 +76,35 @@
     &__link {
       cursor: pointer;
       margin-bottom: 10px;
-      font-size: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+      .MuiListItemButton-root {
+        border-radius: 6px;
+        padding: 8px 16px;
+      }
       &.active {
-        color: #000;
         font-weight: bold;
+        .MuiTypography-root {
+          font-weight: bold;
+          &:hover {
+            font-weight: bold;
+          }
+        }
       }
     }
     &__sublink {
       display: block;
       padding: 6px 10px;
-      color: #333;
+      color: #666;
       font-size: 0.8rem;
       border-radius: 3px;
       background-color: #fff;
 
       &.active {
-        font-weight: bold;
-        background-color: #ddd;
+        .MuiListItemButton-root {
+          font-weight: bold;
+          background-color: #ddd;
+        }
       }
     }
   }
@@ -86,10 +112,36 @@
     &__title {
       margin-bottom: 20px;
       padding-bottom: 10px;
-      border-bottom: 1px solid #000;
-      h1 {
+      border-bottom: 1px solid #636060;
+      h2 {
+        color: #666;
         font-size: 1.3rem;
       }
+    }
+    &__box {
+      &--tit {
+        h3 {
+          color: #666;
+          font-size: 1rem;
+        }
+      }
+      &--cont {
+        color: #666;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .guide-sidebar {
+    position: fixed;
+    left: -240px;
+    top: 0;
+    height: 100%;
+    z-index: 1000;
+    &.open {
+      left: 0;
     }
   }
 }

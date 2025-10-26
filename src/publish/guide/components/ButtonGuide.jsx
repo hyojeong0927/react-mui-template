@@ -6,7 +6,7 @@ export default function ButtonGuide() {
   return (
     <>
       <div className="guide-page__title">
-        <h1>Button</h1>
+        <h2>Button</h2>
       </div>
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
         <Button variant="primary">기본 버튼</Button>

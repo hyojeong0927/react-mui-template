@@ -1,85 +1,120 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { List, ListItemButton, ListItemText, Collapse } from '@mui/material';
+import { ExpandLess, ExpandMore, Menu } from '@mui/icons-material';
 import '../guide.scss';
 
-export default function GuideSibar() {
+export default function GuideSidebar() {
   const location = useLocation();
   const [openMenu, setOpenMenu] = useState(null);
+  const [collapsed, setCollapsed] = useState(false);
 
-  const navItems = [
-    {
-      id: 'guide',
-      label: 'Guide',
-      children: [
-        { id: 'rule', label: 'Rule', to: '/guide' },
-        // { id: 'term', label: 'Term', to: '/guide/term' },
-      ],
-    },
-    {
-      id: 'components',
-      label: 'Components',
-      children: [
-        {
-          id: 'agree',
-          label: 'Agree Form',
-          to: '/guide/guide-agree',
-        },
-        { id: 'button', label: 'Button', to: '/guide/guide-button' },
-      ],
-    },
-  ];
-  const getInitialOpenMenu = () => {
+  const navItems = useMemo(
+    () => [
+      { id: 'rule', label: 'Rule', to: '/guide' },
+      { id: 'term', label: 'Term', to: '/guide/guide-term' },
+      {
+        id: 'common',
+        label: 'Common',
+        children: [{ id: 'box', label: 'Box', to: '/guide/guide-box' }],
+      },
+      {
+        id: 'components',
+        label: 'Components',
+        children: [
+          { id: 'agree', label: 'Agree Form', to: '/guide/guide-agree' },
+          { id: 'button', label: 'Button', to: '/guide/guide-button' },
+        ],
+      },
+    ],
+    [],
+  );
+
+  useEffect(() => {
     const activeItem = navItems.find(item =>
       item.children?.some(child => location.pathname.startsWith(child.to)),
     );
-    return activeItem?.id || null;
-  };
+    setOpenMenu(activeItem?.id || null);
+  }, [location.pathname, navItems]);
 
-  useState(() => setOpenMenu(getInitialOpenMenu()));
-
-  const handleToggle = id => {
-    setOpenMenu(prev => (prev === id ? null : id));
-  };
+  const handleToggle = id => setOpenMenu(prev => (prev === id ? null : id));
+  const toggleSidebar = () => setCollapsed(prev => !prev);
 
   return (
-    <aside className="guide-sidebar">
-      <nav className="guide-sidebar__nav">
-        <ul className="guide-sidebar__list">
-          {navItems.map(item => {
-            const isOpen = openMenu === item.id;
-            return (
-              <li
-                key={item.id}
-                className={`guide-sidebar__item ${isOpen ? 'open' : ''}`}
-              >
-                <span
-                  className={`guide-sidebar__link ${isOpen ? 'active' : ''}`}
-                  onClick={() => handleToggle(item.id)}
-                >
-                  {item.label}
-                </span>
+    <aside className={`guide-sidebar ${collapsed ? 'collapsed' : ''}`}>
+      {/* 사이드바 토글 버튼 */}
+      <div className="sidebar-toggle" onClick={toggleSidebar}>
+        <Menu />
+      </div>
 
-                {item.children && (
-                  <ul className="guide-sidebar__sublist">
+      <List component="nav" className="guide-sidebar__nav">
+        {navItems.map(item => {
+          const hasChildren = !!item.children;
+          const isOpen = openMenu === item.id;
+
+          return (
+            <div
+              key={item.id}
+              className={`guide-sidebar__group ${hasChildren && isOpen ? 'open' : ''}`}
+            >
+              {hasChildren ? (
+                <ListItemButton
+                  onClick={() => handleToggle(item.id)}
+                  className={`guide-sidebar__link ${isOpen ? 'active' : ''} ${collapsed ? 'collapsed' : ''}`}
+                  style={{
+                    justifyContent: collapsed ? 'center' : 'flex-start',
+                  }}
+                >
+                  {!collapsed && <ListItemText primary={item.label} />}
+                  {!collapsed && (isOpen ? <ExpandLess /> : <ExpandMore />)}
+                </ListItemButton>
+              ) : (
+                <ListItemButton
+                  component={NavLink}
+                  to={item.to}
+                  end
+                  className={`guide-sidebar__link ${collapsed ? 'collapsed' : ''}`}
+                  style={{
+                    justifyContent: collapsed ? 'center' : 'flex-start',
+                  }}
+                  onClick={() => setOpenMenu(null)}
+                >
+                  {!collapsed && <ListItemText primary={item.label} />}
+                </ListItemButton>
+              )}
+
+              {hasChildren && (
+                <Collapse
+                  in={isOpen && !collapsed}
+                  timeout="auto"
+                  unmountOnExit
+                >
+                  <List
+                    component="div"
+                    disablePadding
+                    className="guide-sidebar__sublist"
+                  >
                     {item.children.map(sub => (
-                      <li key={sub.id} className="guide-sidebar__subitem">
-                        <NavLink
-                          to={sub.to}
-                          className={({ isActive }) =>
-                            `guide-sidebar__sublink ${isActive ? 'active' : ''}`
-                          }
-                        >
-                          {sub.label}
-                        </NavLink>
-                      </li>
+                      <ListItemButton
+                        key={sub.id}
+                        component={NavLink}
+                        to={sub.to}
+                        end
+                        className="guide-sidebar__subitem"
+                        style={{
+                          justifyContent: collapsed ? 'center' : 'flex-start',
+                        }}
+                      >
+                        {!collapsed && <ListItemText primary={sub.label} />}
+                      </ListItemButton>
                     ))}
-                  </ul>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+                  </List>
+                </Collapse>
+              )}
+            </div>
+          );
+        })}
+      </List>
     </aside>
   );
 }
