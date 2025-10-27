@@ -29,6 +29,14 @@ export default function GuideSidebar() {
         children: [
           { id: 'agree', label: 'Agree Form', to: '/guide/guide-agree' },
           { id: 'button', label: 'Button', to: '/guide/guide-button' },
+          { id: 'checkbox', label: 'Checkbox', to: '/guide/guide-checkbox' },
+          { id: 'radio', label: 'Radio', to: '/guide/guide-radio' },
+          { id: 'select', label: 'Select', to: '/guide/guide-select' },
+          {
+            id: 'textfield',
+            label: 'Text Field',
+            to: '/guide/guide-textfield',
+          },
         ],
       },
     ],

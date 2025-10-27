@@ -16,10 +16,14 @@ import GuideIndex from '@/publish/guide/GuideIndex';
 
 // guide
 import AgreeGuide from '@/publish/guide/components/AgreeGuide';
-import ButtonGuide from '@/publish/guide/components/ButtonGuide';
-import RuleGuide from '@/publish/guide/Rule';
-import TermGuide from '@/publish/guide/Term';
 import BoxGuide from '@/publish/guide/common/Box';
+import ButtonGuide from '@/publish/guide/components/ButtonGuide';
+import CheckboxGuide from '@/publish/guide/components/ChekboxGuide';
+import RadioGuide from '@/publish/guide/components/RadioGuide';
+import RuleGuide from '@/publish/guide/Rule';
+import SelectGuide from '@/publish/guide/components/SelectGuide';
+import TermGuide from '@/publish/guide/Term';
+import TextFieldGuide from '@/publish/guide/components/TextFieldGuide';
 
 // pages
 import Home from '@/publish/pages/Home';
@@ -53,10 +57,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           {/* Guide */}
           <Route path="/guide" element={<GuideIndex />}>
             <Route index element={<RuleGuide />} />
-            <Route path="guide-term" element={<TermGuide />} />
-            <Route path="guide-box" element={<BoxGuide />} />
             <Route path="guide-agree" element={<AgreeGuide />} />
+            <Route path="guide-box" element={<BoxGuide />} />
             <Route path="guide-button" element={<ButtonGuide />} />
+            <Route path="guide-checkbox" element={<CheckboxGuide />} />
+            <Route path="guide-radio" element={<RadioGuide />} />
+            <Route path="guide-select" element={<SelectGuide />} />
+            <Route path="guide-textfield" element={<TextFieldGuide />} />
+            <Route path="guide-term" element={<TermGuide />} />
           </Route>
         </Route>
 

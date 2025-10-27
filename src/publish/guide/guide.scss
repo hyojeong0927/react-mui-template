@@ -54,14 +54,14 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      padding: 10px;
+      padding: 10px 10px 0;
       svg {
         border: 1px solid #ddd;
         background-color: #fff;
       }
     }
     &__nav {
-      padding: 16px;
+      padding: 0 16px 20px;
     }
 
     &__item {
@@ -138,7 +138,9 @@
       }
     }
     &__box {
+      margin-bottom: 20px;
       &--tit {
+        margin-bottom: 10px;
         h3 {
           color: #666;
           font-size: 1rem;

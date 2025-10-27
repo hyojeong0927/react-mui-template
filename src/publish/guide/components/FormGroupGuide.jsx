@@ -1,8 +1,8 @@
-function AgreeGuide() {
+export default function FormGroupGuide() {
   return (
     <>
       <div className="guide-page__title">
-        <h2>Agree Form</h2>
+        <h2>Form Group</h2>
       </div>
       <div className="guide-page__box">
         <div className="guide-page__box--tit">
@@ -13,5 +13,3 @@ function AgreeGuide() {
     </>
   );
 }
-
-export default AgreeGuide;

@@ -8,7 +8,10 @@ export default function ButtonGuide() {
       <div className="guide-page__title">
         <h2>Button</h2>
       </div>
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+      <div
+        className="guide-page__box"
+        style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}
+      >
         <Button variant="primary">기본 버튼</Button>
         <Button variant="secondary">보조 버튼</Button>
         <Button variant="outline">외곽선 버튼</Button>
