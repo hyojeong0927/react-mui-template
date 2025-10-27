@@ -1,4 +1,4 @@
-import { BasicTextField } from '@/publish/components/TextField';
+import { BasicTextField } from '@/publish/components/';
 
 export default function TextFieldGuide() {
   return (

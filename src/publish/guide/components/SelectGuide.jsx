@@ -1,4 +1,4 @@
-import BasicSelect from '@/publish/components/selectbox/BasicSelect';
+import { BasicSelect } from '@/publish/components/';
 
 export default function SelectGuide() {
   const options = [

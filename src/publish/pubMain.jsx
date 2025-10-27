@@ -19,6 +19,7 @@ import AgreeGuide from '@/publish/guide/components/AgreeGuide';
 import BoxGuide from '@/publish/guide/common/Box';
 import ButtonGuide from '@/publish/guide/components/ButtonGuide';
 import CheckboxGuide from '@/publish/guide/components/ChekboxGuide';
+import FormGroupGuide from './guide/components/FormGroupGuide';
 import RadioGuide from '@/publish/guide/components/RadioGuide';
 import RuleGuide from '@/publish/guide/Rule';
 import SelectGuide from '@/publish/guide/components/SelectGuide';
@@ -61,6 +62,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="guide-box" element={<BoxGuide />} />
             <Route path="guide-button" element={<ButtonGuide />} />
             <Route path="guide-checkbox" element={<CheckboxGuide />} />
+            <Route path="guide-form" element={<FormGroupGuide />} />
             <Route path="guide-radio" element={<RadioGuide />} />
             <Route path="guide-select" element={<SelectGuide />} />
             <Route path="guide-textfield" element={<TextFieldGuide />} />

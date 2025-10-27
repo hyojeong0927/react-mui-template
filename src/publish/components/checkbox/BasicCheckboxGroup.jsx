@@ -8,23 +8,17 @@ import {
   FormHelperText,
 } from '@mui/material';
 
-/**
- * props:
- *  id, label, options [{ label, value }], propValue (array),
- *  onChange, disabled, color, size, includeSelectAll,
- *  row (boolean) -> 가로 배치, error (boolean), helperText (string)
- */
 export default function BasicCheckboxGroup({
   id = '',
   label = '',
   options = [],
-  propValue = [], // initial selected values (array)
+  propValue = [],
   onChange,
   disabled = false,
   color = 'primary',
   size = 'medium',
   includeSelectAll = false,
-  row = false, // 가로 배치 여부
+  row = false,
   error = false,
   helperText = '',
 }) {
@@ -32,7 +26,6 @@ export default function BasicCheckboxGroup({
     Array.isArray(propValue) ? propValue : [],
   );
 
-  // 외부 propValue 변경 반영
   useEffect(() => {
     setSelected(Array.isArray(propValue) ? propValue : []);
   }, [propValue]);

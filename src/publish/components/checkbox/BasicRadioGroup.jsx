@@ -22,7 +22,6 @@ export default function BasicRadioGroup({
 }) {
   const [value, setValue] = useState(propValue);
 
-  // propValue 변경 시 내부 state 업데이트
   useEffect(() => {
     setValue(propValue);
   }, [propValue]);

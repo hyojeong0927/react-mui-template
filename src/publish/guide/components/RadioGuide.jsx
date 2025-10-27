@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import BasicRadioGroup from '@/publish/components/checkbox/BasicRadioGroup';
+import { BasicRadioGroup } from '@/publish/components/';
 
 export default function RadioGuide() {
   const [selected, setSelected] = useState('column');

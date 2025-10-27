@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import {
-  BasicCheckbox,
-  BasicCheckboxGroup,
-} from '@/publish/components/checkbox/';
+import { BasicCheckbox, BasicCheckboxGroup } from '@/publish/components';
 
 export default function CheckboxGuide() {
   const [agree, setAgree] = useState(false);
