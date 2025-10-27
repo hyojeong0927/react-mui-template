@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader } from '@mui/material';
 import {
   FormGroup,
+  FormRow,
   BasicTextField,
   BasicCheckboxGroup,
   BasicRadioGroup,
@@ -15,7 +16,6 @@ export default function FormGroupGuide() {
   const [choice, setChoice] = useState('');
   const [selectedValues, setSelectedValues] = useState(['opt1']);
   const [radioValue, setRadioValue] = useState('radio2');
-  const [hasError, setHasError] = useState(false);
 
   // 옵션 정의
   const checkboxOptions = [
@@ -32,7 +32,6 @@ export default function FormGroupGuide() {
   // 체크박스 상태 변경
   const handleCheckboxChange = values => {
     setSelectedValues(values);
-    setHasError(values.length === 0);
   };
 
   // 폼 제출
@@ -50,19 +49,27 @@ export default function FormGroupGuide() {
       <Card>
         <CardHeader title="입력폼" />
         <CardContent>
-          <FormGroup onSubmit={handleSubmit} className="form-group">
+          <FormGroup
+            onSubmit={handleSubmit}
+            className="form-group"
+            formTitle=""
+          >
             {/* 이름 */}
-            <div className="form-row">
+            <FormRow
+              label="Text Field"
+              error={true}
+              helperText="필수 입력입니다."
+            >
               <BasicTextField
                 label="이름"
                 value={name}
                 onChange={setName}
                 placeholder="이름을 입력하세요"
               />
-            </div>
+            </FormRow>
 
             {/* 선택 */}
-            <div className="form-row">
+            <FormRow label="Select" error={true} helperText="필수 입력입니다.">
               <BasicSelect
                 label="선택"
                 value={choice}
@@ -73,39 +80,35 @@ export default function FormGroupGuide() {
                 ]}
                 onChange={setChoice}
               />
-            </div>
+            </FormRow>
 
             {/* 체크박스 */}
-            <div className="form-row">
+            <FormRow
+              label="Checkbox"
+              error={true}
+              helperText="필수 입력입니다."
+            >
               <BasicCheckboxGroup
                 id="chk-group"
-                label="항목 선택"
+                label=""
                 options={checkboxOptions}
                 propValue={selectedValues}
                 row={true}
-                error={hasError}
                 onChange={handleCheckboxChange}
-                helperText={
-                  hasError
-                    ? '최소 하나를 선택하세요.'
-                    : '여러 항목을 선택할 수 있습니다.'
-                }
               />
-            </div>
+            </FormRow>
 
             {/* 라디오 */}
-            <div className="form-row">
+            <FormRow label="Radio" error={true} helperText="">
               <BasicRadioGroup
                 id="radio-group"
-                label="정렬 방향"
+                label=""
                 options={radioOptions}
                 propValue={radioValue}
                 onChange={setRadioValue}
                 direction="row"
-                error={false}
-                helperText="한 가지 옵션만 선택 가능합니다."
               />
-            </div>
+            </FormRow>
 
             {/* 제출 버튼 */}
             <Button type="submit" variant="primary">
