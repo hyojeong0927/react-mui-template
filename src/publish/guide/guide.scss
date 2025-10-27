@@ -47,15 +47,12 @@
     transition: width 0.3s;
     &.collapsed {
       width: 45px;
-      justify-content: center;
     }
-    &:not(.collapsed) {
-      justify-content: flex-start;
-    }
+
     .sidebar-toggle {
       cursor: pointer;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-end;
       padding: 10px;
       svg {

@@ -133,9 +133,13 @@ export default function PubStatusPage() {
       <header className="pub-status__header">
         <h1 className="pub-status__title">퍼블 현황</h1>
         <div className="pub-status__title-link">
-          <a href="/publish/guide" target="_blank" rel="noopener noreferrer">
+          <button
+            type="button"
+            className="btn-status-top"
+            onClick={() => window.open('/publish/guide', '_blank')}
+          >
             Guide
-          </a>
+          </button>
         </div>
       </header>
 

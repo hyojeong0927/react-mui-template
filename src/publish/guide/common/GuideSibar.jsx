@@ -66,9 +66,6 @@ export default function GuideSidebar() {
                 <ListItemButton
                   onClick={() => handleToggle(item.id)}
                   className={`guide-sidebar__link ${isOpen ? 'active' : ''} ${collapsed ? 'collapsed' : ''}`}
-                  style={{
-                    justifyContent: collapsed ? 'center' : 'flex-start',
-                  }}
                 >
                   {!collapsed && <ListItemText primary={item.label} />}
                   {!collapsed && (isOpen ? <ExpandLess /> : <ExpandMore />)}
@@ -78,10 +75,7 @@ export default function GuideSidebar() {
                   component={NavLink}
                   to={item.to}
                   end
-                  className={`guide-sidebar__link ${collapsed ? 'collapsed' : ''}`}
-                  style={{
-                    justifyContent: collapsed ? 'center' : 'flex-start',
-                  }}
+                  className="guide-sidebar__link"
                   onClick={() => setOpenMenu(null)}
                 >
                   {!collapsed && <ListItemText primary={item.label} />}
@@ -106,9 +100,6 @@ export default function GuideSidebar() {
                         to={sub.to}
                         end
                         className="guide-sidebar__subitem"
-                        style={{
-                          justifyContent: collapsed ? 'center' : 'flex-start',
-                        }}
                       >
                         {!collapsed && <ListItemText primary={sub.label} />}
                       </ListItemButton>
