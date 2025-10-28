@@ -4,33 +4,34 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '@/styles/global.scss';
 
 // layout
-import MainLayout from '@/publish/layouts/MainLayout';
-import AuthLayout from '@/publish/layouts/AuthLayout';
-import DashboardLayout from '@/publish/layouts/DashboardLayout';
-import DefaultLayout from '@/publish/layouts/DefaultLayout';
-import BlankLayout from '@/publish/layouts/BlankLayout';
+import {
+  MainLayout,
+  AuthLayout,
+  DashboardLayout,
+  DefaultLayout,
+  BlankLayout,
+} from '@/publish/layouts/';
 
 // status & guide
 import PubStatusPage from '@/publish/status/PubStatusPage';
 import GuideIndex from '@/publish/guide/GuideIndex';
 
 // guide
-import AgreeGuide from '@/publish/guide/components/AgreeGuide';
-import BoxGuide from '@/publish/guide/common/Box';
-import ButtonGuide from '@/publish/guide/components/ButtonGuide';
-import CheckboxGuide from '@/publish/guide/components/ChekboxGuide';
-import FormGroupGuide from './guide/components/FormGroupGuide';
-import RadioGuide from '@/publish/guide/components/RadioGuide';
-import RuleGuide from '@/publish/guide/Rule';
-import SelectGuide from '@/publish/guide/components/SelectGuide';
-import TermGuide from '@/publish/guide/Term';
-import TextFieldGuide from '@/publish/guide/components/TextFieldGuide';
+import {
+  AgreeGuide,
+  BoxGuide,
+  ButtonGuide,
+  CheckboxGuide,
+  FormGroupGuide,
+  RadioGuide,
+  RuleGuide,
+  SelectGuide,
+  TermGuide,
+  TextFieldGuide,
+} from '@/publish/guide/';
 
 // pages
-import Home from '@/publish/pages/Home';
-import Login from '@/publish/pages/Login';
-import Dashboard from '@/publish/pages/Dashboard';
-import Card from '@/publish/pages/Card';
+import { Home, Login, Dashboard, Card } from '@/publish/pages/';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

@@ -1,10 +1,10 @@
-export default function Box() {
+export default function TermGuide() {
   return (
     <>
       <div className="guide-page__title">
-        <h2>Box</h2>
+        <h2>Term</h2>
       </div>
-      {/* box */}
+
       <div className="guide-page__box">
         <div className="guide-page__box--tit">
           <h3>제목</h3>

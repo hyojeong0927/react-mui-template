@@ -7,7 +7,7 @@ import {
   ChevronRight,
   ChevronLeft,
 } from '@mui/icons-material';
-import '../guide.scss';
+import './guide.scss';
 
 export default function GuideSidebar() {
   const location = useLocation();

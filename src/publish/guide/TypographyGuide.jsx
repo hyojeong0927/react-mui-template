@@ -1,10 +1,10 @@
-export default function Rule() {
+export default function TypographyGuide() {
   return (
     <>
       <div className="guide-page__title">
-        <h2>Rule</h2>
+        <h2>Typography</h2>
       </div>
-      {/* box */}
+
       <div className="guide-page__box">
         <div className="guide-page__box--tit">
           <h3>제목</h3>
