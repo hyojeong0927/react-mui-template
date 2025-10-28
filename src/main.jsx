@@ -1,9 +1,9 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import PubMain from '@/publish/PubMain.jsx';
+import App from './App';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PubMain />
+    <App />
   </StrictMode>,
 );
