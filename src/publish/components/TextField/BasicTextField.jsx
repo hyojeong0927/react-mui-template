@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 
 export default function BasicTextField({
@@ -16,9 +16,13 @@ export default function BasicTextField({
 }) {
   const [value, setValue] = useState(propValue);
 
+  useEffect(() => {
+    setValue(propValue);
+  }, [propValue]);
+
   const handleChange = e => {
     setValue(e.target.value);
-    if (onChange) onChange(e);
+    onChange?.(e.target.value);
   };
 
   return (
@@ -35,11 +39,6 @@ export default function BasicTextField({
       error={error}
       helperText={helperText}
       placeholder={placeholder}
-      slotProps={{
-        input: {
-          'aria-labelledby': id ? `${id}-label` : undefined,
-        },
-      }}
     />
   );
 }

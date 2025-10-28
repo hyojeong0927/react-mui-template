@@ -1,18 +1,22 @@
-export default function FormRow({ label, error, children, helperText }) {
+export default function FormRow({ title, required, children, row }) {
   return (
-    <div
-      className={`form-row ${error ? 'error' : ''}`}
-      style={{ marginBottom: '16px' }}
-    >
-      <label
-        style={{ display: 'block', marginBottom: '4px', fontWeight: 'bold' }}
-      >
-        {label}
-      </label>
-      <div>{children}</div>
-      {error && helperText && (
-        <span style={{ color: 'red', fontSize: '12px' }}>{helperText}</span>
+    <div className="form-row" style={{ marginBottom: '16px' }}>
+      {title && (
+        <div
+          className={`form-row__tit ${required ? 'required' : ''}`}
+          style={{
+            display: 'block',
+            marginBottom: '4px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+          }}
+        >
+          {title}
+          {required && <em style={{ color: 'red', marginLeft: 4 }}>*</em>}
+        </div>
       )}
+
+      <div className={`form-row__item ${row ? 'flex' : ''}`}>{children}</div>
     </div>
   );
 }

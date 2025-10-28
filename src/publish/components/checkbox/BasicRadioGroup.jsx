@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import {
-  Radio,
-  RadioGroup,
-  FormControlLabel,
   FormControl,
   FormLabel,
+  FormControlLabel,
+  RadioGroup,
+  Radio,
   FormHelperText,
 } from '@mui/material';
 
@@ -14,9 +14,8 @@ export default function BasicRadioGroup({
   options = [],
   propValue = '',
   onChange,
+  row = false,
   disabled = false,
-  color = 'primary',
-  direction = 'row', // 'row' | 'column'
   error = false,
   helperText = '',
 }) {
@@ -26,39 +25,24 @@ export default function BasicRadioGroup({
     setValue(propValue);
   }, [propValue]);
 
-  const handleChange = event => {
-    const newValue = event.target.value;
-    setValue(newValue);
-    onChange?.(newValue);
+  const handleChange = e => {
+    setValue(e.target.value);
+    onChange?.(e.target.value);
   };
 
   return (
-    <FormControl
-      id={id}
-      disabled={disabled}
-      error={error}
-      sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-    >
-      {label && (
-        <FormLabel id={id ? `${id}-label` : undefined}>{label}</FormLabel>
-      )}
-
-      <RadioGroup
-        row={direction === 'row'}
-        value={value}
-        onChange={handleChange}
-        aria-labelledby={id ? `${id}-label` : undefined}
-      >
+    <FormControl id={id} component="fieldset" error={error} disabled={disabled}>
+      {label && <FormLabel component="legend">{label}</FormLabel>}
+      <RadioGroup value={value} onChange={handleChange} row={row}>
         {options.map(opt => (
           <FormControlLabel
             key={opt.value}
             value={opt.value}
-            control={<Radio color={color} disabled={opt.disabled} />}
+            control={<Radio />}
             label={opt.label}
           />
         ))}
       </RadioGroup>
-
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
   );

@@ -1,51 +1,49 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
+  FormControl,
   Select,
   MenuItem,
-  FormControl,
   InputLabel,
   FormHelperText,
 } from '@mui/material';
 
 export default function BasicSelect({
   id = '',
-  label = '선택',
-  options = [],
+  label = '',
   propValue = '',
   onChange,
-  fullWidth = true,
-  disabled = false,
+  options = [],
   required = false,
+  disabled = false,
   error = false,
   helperText = '',
 }) {
   const [value, setValue] = useState(propValue);
-  const labelId = id ? `${id}-label` : undefined;
 
-  const handleChange = event => {
-    setValue(event.target.value);
-    if (onChange) onChange(event);
+  useEffect(() => {
+    setValue(propValue);
+  }, [propValue]);
+
+  const handleChange = e => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    onChange?.(newValue);
   };
 
   return (
     <FormControl
-      fullWidth={fullWidth}
-      disabled={disabled}
+      fullWidth
       required={required}
+      disabled={disabled}
       error={error}
     >
-      <InputLabel id={labelId}>{label}</InputLabel>
+      {label && <InputLabel id={`${id}-label`}>{label}</InputLabel>}
       <Select
-        labelId={labelId}
+        labelId={label ? `${id}-label` : undefined}
         id={id}
         value={value}
-        label={label}
         onChange={handleChange}
-        slotProps={{
-          root: {
-            'aria-labelledby': labelId,
-          },
-        }}
+        displayEmpty
       >
         {options.map(opt => (
           <MenuItem key={opt.value} value={opt.value}>

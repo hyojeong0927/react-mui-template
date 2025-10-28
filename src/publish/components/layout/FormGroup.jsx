@@ -3,7 +3,7 @@ export default function FormGroup({
   onSubmit,
   className,
   style,
-  formTitle,
+  legend,
 }) {
   const handleSubmit = e => {
     e.preventDefault();
@@ -12,12 +12,17 @@ export default function FormGroup({
 
   return (
     <form onSubmit={handleSubmit} className={className} style={style}>
-      {formTitle && (
-        <fieldset className="sr-only">
-          <legend>{formTitle}</legend>
-        </fieldset>
-      )}
-      {children}
+      <fieldset style={{ border: 'none' }}>
+        {legend && (
+          <legend
+            className="sr-only"
+            style={{ position: 'absolute', left: '-1000px' }}
+          >
+            {legend}
+          </legend>
+        )}
+        {children}
+      </fieldset>
     </form>
   );
 }

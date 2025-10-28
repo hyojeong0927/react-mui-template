@@ -31,12 +31,9 @@ export default function BasicCheckboxGroup({
   }, [propValue]);
 
   const handleToggle = value => {
-    let newSelected;
-    if (selected.includes(value)) {
-      newSelected = selected.filter(v => v !== value);
-    } else {
-      newSelected = [...selected, value];
-    }
+    const newSelected = selected.includes(value)
+      ? selected.filter(v => v !== value)
+      : [...selected, value];
     setSelected(newSelected);
     onChange?.(newSelected);
   };
@@ -52,69 +49,41 @@ export default function BasicCheckboxGroup({
     }
   };
 
-  const labelId = id ? `${id}-label` : undefined;
-
   return (
-    <FormControl component="fieldset" error={error} disabled={disabled} id={id}>
-      {label && (
-        <FormLabel component="legend" id={labelId}>
-          {label}
-        </FormLabel>
-      )}
-
+    <FormControl id={id} component="fieldset" error={error} disabled={disabled}>
+      {label && <FormLabel component="legend">{label}</FormLabel>}
       <FormGroup row={row} sx={{ gap: row ? 2 : 0 }}>
         {includeSelectAll && (
           <FormControlLabel
             control={
               <Checkbox
-                checked={
-                  options.length > 0 && selected.length === options.length
-                }
+                checked={selected.length === options.length}
                 indeterminate={
                   selected.length > 0 && selected.length < options.length
                 }
                 onChange={handleSelectAllChange}
-                disabled={disabled}
                 color={color}
                 size={size}
-                slotProps={{
-                  input: {
-                    'aria-label': '전체 선택',
-                  },
-                }}
               />
             }
             label="전체 선택"
           />
         )}
-
-        {options.map(opt => {
-          const itemLabelId = id ? `${id}-label-${opt.value}` : undefined;
-          return (
-            <FormControlLabel
-              key={opt.value}
-              id={itemLabelId}
-              control={
-                <Checkbox
-                  checked={selected.includes(opt.value)}
-                  onChange={() => handleToggle(opt.value)}
-                  disabled={disabled}
-                  color={color}
-                  size={size}
-                  slotProps={{
-                    input: {
-                      'data-value': opt.value,
-                      'aria-labelledby': itemLabelId,
-                    },
-                  }}
-                />
-              }
-              label={opt.label}
-            />
-          );
-        })}
+        {options.map(opt => (
+          <FormControlLabel
+            key={opt.value}
+            control={
+              <Checkbox
+                checked={selected.includes(opt.value)}
+                onChange={() => handleToggle(opt.value)}
+                color={color}
+                size={size}
+              />
+            }
+            label={opt.label}
+          />
+        ))}
       </FormGroup>
-
       {helperText && <FormHelperText>{helperText}</FormHelperText>}
     </FormControl>
   );

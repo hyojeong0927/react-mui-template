@@ -32,7 +32,7 @@ export default function RadioGuide() {
             options={options}
             propValue={selected}
             onChange={handleChange}
-            direction="row"
+            row
             error={error}
             helperText={
               error
@@ -54,7 +54,7 @@ export default function RadioGuide() {
             options={options}
             propValue={selected}
             onChange={handleChange}
-            direction="column"
+            column
             error={error}
             helperText={
               error

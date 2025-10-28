@@ -11,13 +11,14 @@ import {
 } from '@/publish/components';
 
 export default function FormGroupGuide() {
-  // 상태 초기값 설정
   const [name, setName] = useState('');
+  const [pw, setPw] = useState('');
   const [choice, setChoice] = useState('');
+  const [phone01, setPhone01] = useState('');
+  const [phone02, setPhone02] = useState('');
   const [selectedValues, setSelectedValues] = useState(['opt1']);
   const [radioValue, setRadioValue] = useState('radio2');
 
-  // 옵션 정의
   const checkboxOptions = [
     { value: 'opt1', label: '옵션 1' },
     { value: 'opt2', label: '옵션 2' },
@@ -29,12 +30,6 @@ export default function FormGroupGuide() {
     { value: 'radio2', label: '라디오 2' },
   ];
 
-  // 체크박스 상태 변경
-  const handleCheckboxChange = values => {
-    setSelectedValues(values);
-  };
-
-  // 폼 제출
   const handleSubmit = e => {
     e.preventDefault();
     console.log('폼 제출!', { name, choice, selectedValues, radioValue });
@@ -49,68 +44,96 @@ export default function FormGroupGuide() {
       <Card>
         <CardHeader title="입력폼" />
         <CardContent>
-          <FormGroup
-            onSubmit={handleSubmit}
-            className="form-group"
-            formTitle=""
-          >
-            {/* 이름 */}
-            <FormRow
-              label="Text Field"
-              error={true}
-              helperText="필수 입력입니다."
-            >
+          <FormGroup onSubmit={handleSubmit} legend="입력폼">
+            <FormRow title="이름" required>
               <BasicTextField
-                label="이름"
-                value={name}
-                onChange={setName}
+                id="name"
+                label=""
+                propValue={name}
+                onChange={e => setName(e.target.value)}
                 placeholder="이름을 입력하세요"
+                required
+                error={name}
+                helperText={name ? '필수 입력입니다.' : ''}
               />
             </FormRow>
-
-            {/* 선택 */}
-            <FormRow label="Select" error={true} helperText="필수 입력입니다.">
+            <FormRow title="비밀번호" required>
+              <BasicTextField
+                id="pw"
+                label=""
+                type="password"
+                propValue={pw}
+                onChange={e => setPw(e.target.value)}
+                placeholder="비밀번호 입력"
+                required
+                error={!pw}
+                helperText={!pw ? '필수 입력입니다.' : ''}
+              />
+            </FormRow>
+            <FormRow title="연락처" required row>
               <BasicSelect
-                label="선택"
-                value={choice}
+                id="choice"
+                label=""
+                propValue={choice}
+                onChange={setChoice}
                 options={[
                   { value: '', label: '선택' },
                   { value: 'option1', label: '옵션 1' },
                   { value: 'option2', label: '옵션 2' },
                 ]}
-                onChange={setChoice}
+                error={!choice}
+                helperText={!choice ? '필수 입력입니다.' : ''}
+              />
+              <BasicTextField
+                id="phone-first"
+                label=""
+                propValue={phone01}
+                onChange={e => setPhone01(e.target.value)}
+                placeholder="첫번째"
+                required
+                error={!phone01}
+              />
+              <BasicTextField
+                id="phone-second"
+                label=""
+                propValue={phone02}
+                onChange={e => setPhone02(e.target.value)}
+                placeholder="마지막"
+                required
+                error={!phone02}
               />
             </FormRow>
 
-            {/* 체크박스 */}
-            <FormRow
-              label="Checkbox"
-              error={true}
-              helperText="필수 입력입니다."
-            >
+            <FormRow title="체크박스">
               <BasicCheckboxGroup
                 id="chk-group"
                 label=""
                 options={checkboxOptions}
                 propValue={selectedValues}
-                row={true}
-                onChange={handleCheckboxChange}
+                onChange={setSelectedValues}
+                row
+                error={selectedValues.length === 0}
+                helperText={
+                  selectedValues.length === 0
+                    ? '하나 이상 선택해야 합니다.'
+                    : ''
+                }
               />
             </FormRow>
 
-            {/* 라디오 */}
-            <FormRow label="Radio" error={true} helperText="">
+            <FormRow title="라디오 선택">
               <BasicRadioGroup
                 id="radio-group"
                 label=""
                 options={radioOptions}
                 propValue={radioValue}
                 onChange={setRadioValue}
-                direction="row"
+                row
+                error={!radioValue}
+                helperText={!radioValue ? '하나를 선택해야 합니다.' : ''}
               />
             </FormRow>
 
-            {/* 제출 버튼 */}
             <Button type="submit" variant="primary">
               제출
             </Button>
