@@ -1,5 +1,3 @@
-function SideBar() {
-  return <div></div>;
+export default function SideBar() {
+  return <div>sidebar</div>;
 }
-
-export default SideBar;
