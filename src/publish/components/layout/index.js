@@ -4,4 +4,4 @@ export { default as FormGroup } from './FormGroup';
 export { default as FormRow } from './FormRow';
 export { default as Header } from './Header';
 export { default as Main } from './Main';
-export { default as SideBar } from './SideBar';
+export { default as Sidebar } from './Sidebar';
