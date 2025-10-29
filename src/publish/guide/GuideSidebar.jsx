@@ -17,6 +17,7 @@ export default function GuideSidebar() {
   const navItems = useMemo(
     () => [
       { id: 'rule', label: 'Rule', to: '/guide' },
+      // { id: 'layout', label: 'Layout', to: '/guide/guide-layout' },
       // { id: 'term', label: 'Term', to: '/guide/guide-term' },
       // {
       //   id: 'common',
@@ -31,6 +32,7 @@ export default function GuideSidebar() {
           { id: 'button', label: 'Button', to: '/guide/guide-button' },
           { id: 'checkbox', label: 'Checkbox', to: '/guide/guide-checkbox' },
           { id: 'form', label: 'Form Group', to: '/guide/guide-form' },
+
           { id: 'radio', label: 'Radio', to: '/guide/guide-radio' },
           { id: 'select', label: 'Select', to: '/guide/guide-select' },
           {

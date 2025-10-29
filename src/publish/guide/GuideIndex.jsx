@@ -1,5 +1,5 @@
 import { Outlet, Link } from 'react-router-dom';
-import GuideSibar from './GuideSibar';
+import GuideSidebar from './GuideSidebar';
 import './guide.scss';
 
 export default function GuideIndex() {
@@ -12,7 +12,7 @@ export default function GuideIndex() {
           <Link to="/guide/guide-agree">Components</Link>
         </nav> */}
       </header>
-      <GuideSibar />
+      <GuideSidebar />
       <main className="guide-main">
         <Outlet />
       </main>

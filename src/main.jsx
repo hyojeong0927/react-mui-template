@@ -23,6 +23,7 @@ import {
   ButtonGuide,
   CheckboxGuide,
   FormGroupGuide,
+  LayoutGuide,
   RadioGuide,
   RuleGuide,
   SelectGuide,
@@ -64,6 +65,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="guide-button" element={<ButtonGuide />} />
             <Route path="guide-checkbox" element={<CheckboxGuide />} />
             <Route path="guide-form" element={<FormGroupGuide />} />
+            <Route path="guide-layout" element={<LayoutGuide />} />
             <Route path="guide-radio" element={<RadioGuide />} />
             <Route path="guide-select" element={<SelectGuide />} />
             <Route path="guide-textfield" element={<TextFieldGuide />} />
