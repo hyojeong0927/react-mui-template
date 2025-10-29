@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import { Container, Main, Sidebar } from '@/publish/components/layout/';
+import { Container, Main } from '@/publish/components/layout/';
 
 export default function DashboardLayout() {
   return (
     <Container>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Main>
         <Outlet />
       </Main>
