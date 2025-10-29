@@ -15,7 +15,7 @@ export default function TextFieldGuide() {
         <div className="guide-page__box--cont">
           <BasicTextField
             id="name"
-            label="아이디"
+            label=""
             placeholder="아이디를 입력하세요"
           />
         </div>
@@ -29,10 +29,11 @@ export default function TextFieldGuide() {
         <div className="guide-page__box--cont">
           <BasicTextField
             id="pw"
-            label="비밀번호"
+            label=""
             type="password"
             required
             placeholder="비밀번호 입력"
+            helperText=""
           />
         </div>
       </div>
@@ -43,7 +44,13 @@ export default function TextFieldGuide() {
           <h3>숫자 입력</h3>
         </div>
         <div className="guide-page__box--cont">
-          <BasicTextField id="age" label="나이" type="number" />
+          <BasicTextField
+            id="age"
+            label=""
+            type="number"
+            placeholder="숫자 입력"
+            helperText=""
+          />
         </div>
       </div>
 
@@ -74,6 +81,8 @@ export default function TextFieldGuide() {
             label="비활성 필드"
             disabled
             value="읽기 전용"
+            helperText=""
+            placeholder=""
           />
         </div>
       </div>

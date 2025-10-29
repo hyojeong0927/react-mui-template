@@ -20,7 +20,7 @@ export default function SelectGuide() {
         <div className="guide-page__box--cont">
           <BasicSelect
             id="default"
-            label="과일 선택"
+            label=""
             options={options}
             propValue="apple"
           />
@@ -35,10 +35,9 @@ export default function SelectGuide() {
         <div className="guide-page__box--cont">
           <BasicSelect
             id="error"
-            label="과일 선택"
+            label="과일"
             options={options}
             propValue=""
-            required
             error
             helperText="과일을 반드시 선택해주세요."
           />
@@ -53,7 +52,7 @@ export default function SelectGuide() {
         <div className="guide-page__box--cont">
           <BasicSelect
             id="disable"
-            label="선택 불가"
+            label=""
             options={options}
             propValue="banana"
             disabled

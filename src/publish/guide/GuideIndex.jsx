@@ -7,10 +7,10 @@ export default function GuideIndex() {
     <section className="guide-container">
       <header className="guide-header">
         <h1 className="guide-logo">Guide</h1>
-        <nav className="nav">
+        {/* <nav className="nav">
           <Link to="/guide">Home</Link>
           <Link to="/guide/guide-agree">Components</Link>
-        </nav>
+        </nav> */}
       </header>
       <GuideSibar />
       <main className="guide-main">
