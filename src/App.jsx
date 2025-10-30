@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import { SpeedInsights } from '@vercel/speed-insights/react';
 // layout
 import {
   MainLayout,
@@ -34,6 +34,7 @@ import { Home, Login, Dashboard, Card } from '@/pages/';
 function App() {
   return (
     <BrowserRouter>
+      <SpeedInsights />
       <Routes>
         {/* Main */}
         <Route element={<MainLayout />}>
