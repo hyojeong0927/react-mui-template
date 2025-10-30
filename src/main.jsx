@@ -36,21 +36,21 @@ import { Home, Login, Dashboard, Card } from '@/publish/pages/';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="">
+    <BrowserRouter>
       <Routes>
         {/* Main */}
         <Route element={<MainLayout />}>
-          <Route path="/pages/home" element={<Home />} />
+          <Route path="/publish/pages/home" element={<Home />} />
         </Route>
 
         {/* Auth */}
         <Route element={<AuthLayout />}>
-          <Route path="/pages/login" element={<Login />} />
+          <Route path="/publish/pages/login" element={<Login />} />
         </Route>
 
         {/* Dashboard */}
         <Route element={<DashboardLayout />}>
-          <Route path="/pages/dashboard" element={<Dashboard />} />
+          <Route path="/publish/pages/dashboard" element={<Dashboard />} />
         </Route>
 
         {/* Status & Guide */}
@@ -58,7 +58,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="" element={<PubStatusPage />} />
 
           {/* Guide */}
-          <Route path="/guide" element={<GuideIndex />}>
+          <Route path="/publish/guide" element={<GuideIndex />}>
             <Route index element={<RuleGuide />} />
             <Route path="guide-agree" element={<AgreeGuide />} />
             <Route path="guide-box" element={<BoxGuide />} />
@@ -75,7 +75,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         {/* Pages */}
         <Route element={<DefaultLayout />}>
-          <Route path="/pages/card" element={<Card />} />
+          <Route path="/publish/pages/card" element={<Card />} />
         </Route>
       </Routes>
     </BrowserRouter>
