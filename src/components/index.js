@@ -1,3 +1,4 @@
+export * from './agree';
 export * from './button';
 export * from './checkbox';
 export * from './layout';

@@ -4,7 +4,7 @@ import {
   FormGroup,
   FormRow,
   BasicTextField,
-  BasicCheckboxGroup,
+  CheckboxGroup,
   BasicRadioGroup,
   BasicSelect,
   Button,
@@ -105,7 +105,7 @@ export default function FormGroupGuide() {
             </FormRow>
 
             <FormRow title="체크박스">
-              <BasicCheckboxGroup
+              <CheckboxGroup
                 id="chk-group"
                 label=""
                 options={checkboxOptions}

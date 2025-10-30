@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BasicCheckbox, BasicCheckboxGroup } from '@/components';
+import { BasicCheckbox, CheckboxGroup } from '@/components';
 
 export default function CheckboxGuide() {
   const [agree, setAgree] = useState(false);
@@ -53,7 +53,7 @@ export default function CheckboxGuide() {
           <h3>그룹 체크박스 + 가로</h3>
         </div>
         <div className="guide-page__box--cont">
-          <BasicCheckboxGroup
+          <CheckboxGroup
             id="chk-group"
             label="항목 선택"
             options={options}
@@ -80,7 +80,7 @@ export default function CheckboxGuide() {
           <h3>전체 선택 체크박스 + 세로</h3>
         </div>
         <div className="guide-page__box--cont">
-          <BasicCheckboxGroup
+          <CheckboxGroup
             id="chk-group"
             label="항목 선택"
             options={options}

@@ -8,7 +8,7 @@ import {
   FormHelperText,
 } from '@mui/material';
 
-export default function BasicCheckboxGroup({
+export default function CheckboxGroup({
   id = '',
   label = '',
   options = [],

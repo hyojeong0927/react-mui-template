@@ -34,9 +34,11 @@ export default function MixedList({
           );
         }
         if (component === 'ol') {
-          <ListItem key={index} disablePadding>
-            <ListItemText primary={item[listItem] ?? item} />
-          </ListItem>;
+          return (
+            <ListItem key={index} disablePadding>
+              <ListItemText primary={item[listItem] ?? item} />
+            </ListItem>
+          );
         }
         return (
           <ListItem key={index} disablePadding>
