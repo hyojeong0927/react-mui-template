@@ -36,7 +36,7 @@ import { Home, Login, Dashboard, Card } from '@/publish/pages/';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/publish">
+    <BrowserRouter basename="">
       <Routes>
         {/* Main */}
         <Route element={<MainLayout />}>
@@ -55,7 +55,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         {/* Status & Guide */}
         <Route element={<BlankLayout />}>
-          <Route path="/" element={<PubStatusPage />} />
+          <Route path="" element={<PubStatusPage />} />
 
           {/* Guide */}
           <Route path="/guide" element={<GuideIndex />}>
