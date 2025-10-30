@@ -6,7 +6,7 @@ export default function GuideIndex() {
   return (
     <section className="guide-container">
       <header className="guide-header">
-        <h1 className="guide-logo">Guide</h1>
+        <h1 className="guide-logo">React + Mui</h1>
         {/* <nav className="nav">
           <Link to="/guide">Home</Link>
           <Link to="/guide/guide-agree">Components</Link>
