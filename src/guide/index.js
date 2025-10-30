@@ -11,6 +11,7 @@ export { default as BoxGuide } from './components/BoxGuide';
 export { default as ButtonGuide } from './components/ButtonGuide';
 export { default as CheckboxGuide } from './components/ChekboxGuide';
 export { default as FormGroupGuide } from './components/FormGroupGuide';
+export { default as ListGuide } from './components/ListGuide';
 export { default as RadioGuide } from './components/RadioGuide';
 export { default as SelectGuide } from './components/SelectGuide';
 export { default as TextFieldGuide } from './components/TextFieldGuide';

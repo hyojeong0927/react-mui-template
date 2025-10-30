@@ -21,6 +21,7 @@ import {
   CheckboxGuide,
   FormGroupGuide,
   LayoutGuide,
+  ListGuide,
   RadioGuide,
   RuleGuide,
   SelectGuide,
@@ -64,6 +65,7 @@ function App() {
             <Route path="guide-checkbox" element={<CheckboxGuide />} />
             <Route path="guide-form" element={<FormGroupGuide />} />
             <Route path="guide-layout" element={<LayoutGuide />} />
+            <Route path="guide-list" element={<ListGuide />} />
             <Route path="guide-radio" element={<RadioGuide />} />
             <Route path="guide-select" element={<SelectGuide />} />
             <Route path="guide-textfield" element={<TextFieldGuide />} />

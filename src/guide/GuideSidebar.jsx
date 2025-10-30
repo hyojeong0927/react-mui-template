@@ -25,7 +25,7 @@ export default function GuideSidebar() {
           { id: 'button', label: 'Button', to: '/guide-button' },
           { id: 'checkbox', label: 'Checkbox', to: '/guide-checkbox' },
           { id: 'form', label: 'Form Group', to: '/guide-form' },
-
+          { id: 'list', label: 'List', to: '/guide-list' },
           { id: 'radio', label: 'Radio', to: '/guide-radio' },
           { id: 'select', label: 'Select', to: '/guide-select' },
           {
