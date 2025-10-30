@@ -40,7 +40,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         {/* Main */}
         <Route element={<MainLayout />}>
-          <Route path="/publish/pages/home" element={<Home />} />
+          <Route path="/pages/home" element={<Home />} />
         </Route>
 
         {/* Auth */}
@@ -58,7 +58,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="" element={<PubStatusPage />} />
 
           {/* Guide */}
-          <Route path="/publish/guide" element={<GuideIndex />}>
+          <Route path="/guide" element={<GuideIndex />}>
             <Route index element={<RuleGuide />} />
             <Route path="guide-agree" element={<AgreeGuide />} />
             <Route path="guide-box" element={<BoxGuide />} />
