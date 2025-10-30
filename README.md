@@ -62,3 +62,11 @@ http://localhost:5173/publish/guide
 # 배포
 
 npm run build && npm run preview
+
+# 캐시 전체 삭제
+
+git rm -r --cached .
+
+# 내부 객체 정리
+
+git gc --prune=now
