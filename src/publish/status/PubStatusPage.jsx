@@ -252,7 +252,7 @@ export default function PubStatusPage() {
                     <td key={col.key}>
                       {col.key === 'fileName' ? (
                         <a
-                          href={`/publish/${row.folder}${row.fileUrl}`}
+                          href={`/${row.folder}${row.fileUrl}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
