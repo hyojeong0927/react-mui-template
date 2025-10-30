@@ -36,18 +36,18 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Main */}
-        <Route path="/pages" element={<MainLayout />}>
-          <Route path="/home" element={<Home />} />
+        <Route element={<MainLayout />}>
+          <Route path="/pages/home" element={<Home />} />
         </Route>
 
         {/* Auth */}
-        <Route path="/pages" element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
+        <Route element={<AuthLayout />}>
+          <Route path="/pages/login" element={<Login />} />
         </Route>
 
         {/* Dashboard */}
-        <Route path="/pages" element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+        <Route element={<DashboardLayout />}>
+          <Route path="/pages/dashboard" element={<Dashboard />} />
         </Route>
 
         {/* Status & Guide */}
@@ -71,8 +71,8 @@ function App() {
         </Route>
 
         {/* Pages */}
-        <Route path="/pages" element={<DefaultLayout />}>
-          <Route path="/card" element={<Card />} />
+        <Route element={<DefaultLayout />}>
+          <Route path="/pages/card" element={<Card />} />
         </Route>
       </Routes>
     </BrowserRouter>
