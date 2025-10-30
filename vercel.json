@@ -1,4 +1,3 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-  "ignoreCommand": "vite build"
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
