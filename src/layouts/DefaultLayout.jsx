@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import { Container, Main, Header, Footer } from '@/publish/components/layout/';
+import { Container, Main, Header, Footer } from '@/components/layout/';
 
-export default function MainLayout() {
+export default function DefaultLayout() {
   return (
     <Container>
       <Header />

@@ -1,4 +1,4 @@
-import { BasicSelect } from '@/publish/components/';
+import { BasicSelect } from '@/components/';
 
 export default function SelectGuide() {
   const options = [

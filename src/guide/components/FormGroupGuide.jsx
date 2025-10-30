@@ -8,7 +8,7 @@ import {
   BasicRadioGroup,
   BasicSelect,
   Button,
-} from '@/publish/components';
+} from '@/components';
 
 export default function FormGroupGuide() {
   const [name, setName] = useState('');

@@ -1,3 +1,82 @@
-export default function App() {
-  return <></>;
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// layout
+import {
+  MainLayout,
+  AuthLayout,
+  DashboardLayout,
+  DefaultLayout,
+  BlankLayout,
+} from '@/layouts/';
+
+// status & guide
+import PubStatusPage from '@/status/PubStatusPage';
+import GuideIndex from '@/guide/GuideIndex';
+
+// guide
+import {
+  AgreeGuide,
+  BoxGuide,
+  ButtonGuide,
+  CheckboxGuide,
+  FormGroupGuide,
+  LayoutGuide,
+  RadioGuide,
+  RuleGuide,
+  SelectGuide,
+  TermGuide,
+  TextFieldGuide,
+} from '@/guide/';
+
+// pages
+import { Home, Login, Dashboard, Card } from '@/pages/';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* Main */}
+        <Route path="/pages" element={<MainLayout />}>
+          <Route path="/home" element={<Home />} />
+        </Route>
+
+        {/* Auth */}
+        <Route path="/pages" element={<AuthLayout />}>
+          <Route path="/login" element={<Login />} />
+        </Route>
+
+        {/* Dashboard */}
+        <Route path="/pages" element={<DashboardLayout />}>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
+
+        {/* Status & Guide */}
+        <Route element={<BlankLayout />}>
+          <Route path="/" element={<PubStatusPage />} />
+
+          {/* Guide */}
+          <Route path="/guide" element={<GuideIndex />}>
+            <Route index element={<RuleGuide />} />
+            <Route path="guide-agree" element={<AgreeGuide />} />
+            <Route path="guide-box" element={<BoxGuide />} />
+            <Route path="guide-button" element={<ButtonGuide />} />
+            <Route path="guide-checkbox" element={<CheckboxGuide />} />
+            <Route path="guide-form" element={<FormGroupGuide />} />
+            <Route path="guide-layout" element={<LayoutGuide />} />
+            <Route path="guide-radio" element={<RadioGuide />} />
+            <Route path="guide-select" element={<SelectGuide />} />
+            <Route path="guide-textfield" element={<TextFieldGuide />} />
+            <Route path="guide-term" element={<TermGuide />} />
+          </Route>
+        </Route>
+
+        {/* Pages */}
+        <Route path="/pages" element={<DefaultLayout />}>
+          <Route path="/card" element={<Card />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;

@@ -14,6 +14,9 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    outDir: 'dist',
+  },
   css: {
     modules: {
       localsConvention: 'camelCase',

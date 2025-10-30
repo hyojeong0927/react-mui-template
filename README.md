@@ -58,3 +58,7 @@ http://localhost:5173/publish
 # 가이드
 
 http://localhost:5173/publish/guide
+
+# 배포
+
+npm run build && npm run preview

@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Container, Main } from '@/publish/components/layout/';
+import { Container, Main } from '@/components/layout/';
 
 export default function DashboardLayout() {
   return (
