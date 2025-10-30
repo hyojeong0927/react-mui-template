@@ -17,6 +17,7 @@
   .guide-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 10px;
     width: 100%;
     height: 50px;
@@ -36,6 +37,11 @@
         display: block;
         color: #f7f7f7;
         font-size: 0.9rem;
+      }
+      .btn-nav {
+        padding: 5px 10px;
+        font-size: 0.7rem;
+        background-color: #666;
       }
     }
   }

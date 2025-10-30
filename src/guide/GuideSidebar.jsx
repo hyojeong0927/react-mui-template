@@ -16,29 +16,22 @@ export default function GuideSidebar() {
 
   const navItems = useMemo(
     () => [
-      { id: 'rule', label: 'Rule', to: '/guide' },
-      // { id: 'layout', label: 'Layout', to: '/guide/guide-layout' },
-      // { id: 'term', label: 'Term', to: '/guide/guide-term' },
-      // {
-      //   id: 'common',
-      //   label: 'Common',
-      //   children: [{ id: 'box', label: 'Box', to: '/guide/guide-box' }],
-      // },
+      { id: 'rule', label: 'Rule', to: '/' },
       {
         id: 'components',
         label: 'Components',
         children: [
-          { id: 'agree', label: 'Agree Form', to: '/guide/guide-agree' },
-          { id: 'button', label: 'Button', to: '/guide/guide-button' },
-          { id: 'checkbox', label: 'Checkbox', to: '/guide/guide-checkbox' },
-          { id: 'form', label: 'Form Group', to: '/guide/guide-form' },
+          { id: 'agree', label: 'Agree Form', to: '/guide-agree' },
+          { id: 'button', label: 'Button', to: '/guide-button' },
+          { id: 'checkbox', label: 'Checkbox', to: '/guide-checkbox' },
+          { id: 'form', label: 'Form Group', to: '/guide-form' },
 
-          { id: 'radio', label: 'Radio', to: '/guide/guide-radio' },
-          { id: 'select', label: 'Select', to: '/guide/guide-select' },
+          { id: 'radio', label: 'Radio', to: '/guide-radio' },
+          { id: 'select', label: 'Select', to: '/guide-select' },
           {
             id: 'textfield',
             label: 'Text Field',
-            to: '/guide/guide-textfield',
+            to: '/guide-textfield',
           },
         ],
       },

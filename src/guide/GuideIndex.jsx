@@ -1,4 +1,5 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Button } from '@/components/';
 import GuideSidebar from './GuideSidebar';
 import './guide.scss';
 
@@ -7,10 +8,14 @@ export default function GuideIndex() {
     <section className="guide-container">
       <header className="guide-header">
         <h1 className="guide-logo">React + Mui</h1>
-        {/* <nav className="nav">
-          <Link to="/guide">Home</Link>
-          <Link to="/guide/guide-agree">Components</Link>
-        </nav> */}
+        <nav className="nav">
+          <Button
+            className="btn-nav"
+            onClick={() => window.open('/status', '_blank')}
+          >
+            Publish Status
+          </Button>
+        </nav>
       </header>
       <GuideSidebar />
       <main className="guide-main">

@@ -53,10 +53,10 @@ function App() {
 
         {/* Status & Guide */}
         <Route element={<BlankLayout />}>
-          <Route path="/" element={<PubStatusPage />} />
+          <Route path="/status" element={<PubStatusPage />} />
 
           {/* Guide */}
-          <Route path="/guide" element={<GuideIndex />}>
+          <Route path="/" element={<GuideIndex />}>
             <Route index element={<RuleGuide />} />
             <Route path="guide-agree" element={<AgreeGuide />} />
             <Route path="guide-box" element={<BoxGuide />} />
