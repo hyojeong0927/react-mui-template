@@ -46,7 +46,7 @@ import {
 // pages
 import { Home, Login, Dashboard, Card } from '@/pages/';
 
-const Router = () => {
+export default function Router() {
   return (
     <BrowserRouter>
       <SpeedInsights />
@@ -73,28 +73,28 @@ const Router = () => {
           {/* Guide */}
           <Route path="/" element={<GuideIndex />}>
             <Route index element={<RuleGuide />} />
-            <Route path="" element={<AccordionGuide />} />
-            <Route path="" element={<AgGridGuide />} />
+            <Route path="guide-accordion" element={<AccordionGuide />} />
+            <Route path="guide-aggrid" element={<AgGridGuide />} />
             <Route path="guide-agree" element={<AgreeGuide />} />
-            <Route path="" element={<BottomSheetGuide />} />
+            <Route path="guide-bottomsheet" element={<BottomSheetGuide />} />
             <Route path="guide-box" element={<BoxGuide />} />
             <Route path="guide-button" element={<ButtonGuide />} />
-            <Route path="" element={<ChartGuide />} />
+            <Route path="guide-chart" element={<ChartGuide />} />
             <Route path="guide-checkbox" element={<CheckboxGuide />} />
-            <Route path="" element={<FloatingbarGuide />} />
+            <Route path="guide-floatingbar" element={<FloatingbarGuide />} />
             <Route path="guide-form" element={<FormGroupGuide />} />
             <Route path="guide-layout" element={<LayoutGuide />} />
             <Route path="guide-list" element={<ListGuide />} />
-            <Route path="" element={<MarkupGuide />} />
-            <Route path="" element={<ModalGuide />} />
+            <Route path="guide-markup" element={<MarkupGuide />} />
+            <Route path="guide-modal" element={<ModalGuide />} />
             <Route path="guide-radio" element={<RadioGuide />} />
-            <Route path="" element={<SearchFormGuide />} />
+            <Route path="guide-search" element={<SearchFormGuide />} />
             <Route path="guide-select" element={<SelectGuide />} />
-            <Route path="" element={<StepGuide />} />
-            <Route path="" element={<StructureGuide />} />
-            <Route path="" element={<StyleGuide />} />
-            <Route path="" element={<TableGuide />} />
-            <Route path="" element={<TabsGuide />} />
+            <Route path="guide-step" element={<StepGuide />} />
+            <Route path="guide-structure" element={<StructureGuide />} />
+            <Route path="guide-style" element={<StyleGuide />} />
+            <Route path="guide-table" element={<TableGuide />} />
+            <Route path="guide-tabs" element={<TabsGuide />} />
             <Route path="guide-textfield" element={<TextFieldGuide />} />
             <Route path="guide-term" element={<TermGuide />} />
             <Route path="guide-typograph" element={<TypograhpyGuide />} />
@@ -108,5 +108,4 @@ const Router = () => {
       </Routes>
     </BrowserRouter>
   );
-};
-export default Router;
+}

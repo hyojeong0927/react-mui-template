@@ -17,10 +17,16 @@ export default function GuideSidebar() {
   const navItems = useMemo(
     () => [
       { id: 'rule', label: 'Rule', to: '/' },
+      // {
+      //   id: 'contents',
+      //   label: 'Contents',
+      //   children: [{ id: '', label: '', to: '/guide-aggrid' }],
+      // },
       {
         id: 'components',
         label: 'Components',
         children: [
+          { id: 'aggird', label: 'AgGrid', to: '/guide-aggrid' },
           { id: 'agree', label: 'Agree Form', to: '/guide-agree' },
           { id: 'button', label: 'Button', to: '/guide-button' },
           { id: 'checkbox', label: 'Checkbox', to: '/guide-checkbox' },
