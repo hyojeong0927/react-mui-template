@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './product.scss';
 
-export default function ProductListPage() {
+export default function ProductList() {
   const navigate = useNavigate();
-
   const [viewMode, setViewMode] = useState('grid');
 
   const [products] = useState([
@@ -16,76 +16,59 @@ export default function ProductListPage() {
   ]);
 
   const goToDetail = id => {
-    navigate(`/product/${id}`);
+    navigate(`/guide-product/${id}`);
   };
 
+  const viewModes = [
+    { key: 'grid', label: '그리드 보기' },
+    { key: 'listImage', label: '리스트 보기 (이미지 포함)' },
+    { key: 'listNoImage', label: '리스트 보기 (이미지 없음)' },
+  ];
+
   return (
-    <div className="p-4">
+    <div className="product-list-page">
       {/* 보기 모드 버튼 */}
-      <div className="flex gap-2 mb-4">
-        <button
-          className={`px-4 py-2 rounded border ${
-            viewMode === 'grid' ? 'bg-blue-500 text-white' : 'bg-white'
-          }`}
-          onClick={() => setViewMode('grid')}
-        >
-          그리드 보기
-        </button>
-        <button
-          className={`px-4 py-2 rounded border ${
-            viewMode === 'listImage' ? 'bg-blue-500 text-white' : 'bg-white'
-          }`}
-          onClick={() => setViewMode('listImage')}
-        >
-          리스트 보기 (이미지 포함)
-        </button>
-        <button
-          className={`px-4 py-2 rounded border ${
-            viewMode === 'listNoImage' ? 'bg-blue-500 text-white' : 'bg-white'
-          }`}
-          onClick={() => setViewMode('listNoImage')}
-        >
-          리스트 보기 (이미지 없음)
-        </button>
+      <div className="view-mode-buttons">
+        {viewModes.map(({ key, label }) => (
+          <button
+            key={key}
+            className={`mode-btn ${viewMode === key ? 'active' : ''}`}
+            onClick={() => setViewMode(key)}
+          >
+            {label}
+          </button>
+        ))}
       </div>
 
       {/* 상품 리스트 */}
       {viewMode === 'grid' && (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="product-grid">
           {products.map(product => (
             <div
               key={product.id}
-              className="border rounded shadow p-4 cursor-pointer hover:shadow-lg"
+              className="product-card"
               onClick={() => goToDetail(product.id)}
             >
-              <div className="h-40 bg-gray-200 flex items-center justify-center">
-                이미지
-              </div>
-              <div className="mt-2 text-lg font-bold">{product.name}</div>
-              <div className="mt-1 text-red-500 font-semibold">
-                {product.price.toLocaleString()}원
-              </div>
+              <div className="image-area">이미지</div>
+              <div className="name">{product.name}</div>
+              <div className="price">{product.price.toLocaleString()}원</div>
             </div>
           ))}
         </div>
       )}
 
       {viewMode === 'listImage' && (
-        <div className="space-y-2">
+        <div className="product-list with-image">
           {products.map(product => (
             <div
               key={product.id}
-              className="border rounded shadow p-4 cursor-pointer hover:shadow-lg flex items-center gap-4"
+              className="product-item"
               onClick={() => goToDetail(product.id)}
             >
-              <div className="w-24 h-24 bg-gray-200 flex items-center justify-center">
-                이미지
-              </div>
-              <div className="flex-1">
-                <div className="text-lg font-bold">{product.name}</div>
-                <div className="text-red-500 font-semibold">
-                  {product.price.toLocaleString()}원
-                </div>
+              <div className="image-area">이미지</div>
+              <div className="info">
+                <div className="name">{product.name}</div>
+                <div className="price">{product.price.toLocaleString()}원</div>
               </div>
             </div>
           ))}
@@ -93,17 +76,15 @@ export default function ProductListPage() {
       )}
 
       {viewMode === 'listNoImage' && (
-        <div className="space-y-2">
+        <div className="product-list no-image">
           {products.map(product => (
             <div
               key={product.id}
-              className="border rounded shadow p-4 cursor-pointer hover:shadow-lg flex justify-between items-center"
+              className="product-item"
               onClick={() => goToDetail(product.id)}
             >
-              <div className="text-lg font-bold">{product.name}</div>
-              <div className="text-red-500 font-semibold">
-                {product.price.toLocaleString()}원
-              </div>
+              <div className="name">{product.name}</div>
+              <div className="price">{product.price.toLocaleString()}원</div>
             </div>
           ))}
         </div>

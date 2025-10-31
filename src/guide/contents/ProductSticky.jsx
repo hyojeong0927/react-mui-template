@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
-import styles from './Stickypage.module.css';
+import './product.scss';
 
-export default function StickyPage() {
+export default function ProductSticky() {
   const sectionRefs = useRef([]);
   const contentRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
@@ -54,39 +54,28 @@ export default function StickyPage() {
   };
 
   return (
-    <div
-      className="page"
-      style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}
-    >
+    <div className="product-sticky-page">
       {/* 헤더 */}
-      <div className={styles.header}>
-        <div className="p-4 text-lg font-bold">상품 상세 페이지</div>
-      </div>
+      <header className="header">
+        <h1 className="title">상품 상세 페이지</h1>
+      </header>
 
       {/* 컨텐츠 */}
-      <div
-        className="content"
-        ref={contentRef}
-        style={{ flex: 1, overflowY: 'auto' }}
-      >
-        {/* 상품 정보 */}
-        <div className="product-info p-4 bg-white shadow mb-4">
-          <div className="product-title text-xl font-bold mb-2">상품명</div>
-          <div className="product-image h-64 bg-gray-200 flex items-center justify-center">
-            이미지 영역
-          </div>
-          <div className="product-price mt-4 text-lg font-semibold">
-            가격: 99,000원
-          </div>
-        </div>
+      <main className="content" ref={contentRef}>
+        {/* 상품 기본 정보 */}
+        <section className="product-info">
+          <h2 className="product-title">상품명</h2>
+          <div className="product-image">이미지 영역</div>
+          <p className="product-price">가격: 99,000원</p>
+        </section>
 
-        {/* 탭 */}
-        <div className={styles['tabs-container']}>
-          <div className={styles.tabs}>
+        {/* 탭 버튼 */}
+        <div className="tabs-container">
+          <div className="tabs">
             {tabItems.map((tab, index) => (
               <button
                 key={index}
-                className={activeTab === index ? 'active' : ''}
+                className={`tab-btn ${activeTab === index ? 'active' : ''}`}
                 onClick={() => scrollToSection(index)}
               >
                 {tab.label}
@@ -97,22 +86,17 @@ export default function StickyPage() {
 
         {/* 탭 콘텐츠 */}
         {tabItems.map((tab, index) => (
-          <div
+          <section
             key={index}
             ref={el => (sectionRefs.current[index] = el)}
-            className={styles['tab-body']}
-            style={{
-              minHeight: '600px',
-              background: '#f9f9f9',
-              marginBottom: '20px',
-            }}
+            className="tab-section"
           >
-            <h2 className="text-xl font-bold mb-4">{tab.label}</h2>
+            <h3>{tab.label}</h3>
             <p>{tab.content}</p>
-            <div style={{ height: '500px' }}>스크롤 테스트 콘텐츠</div>
-          </div>
+            <div className="dummy-area">스크롤 테스트 콘텐츠</div>
+          </section>
         ))}
-      </div>
+      </main>
     </div>
   );
 }

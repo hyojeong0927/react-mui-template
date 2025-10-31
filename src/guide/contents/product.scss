@@ -1,0 +1,244 @@
+.product-list-page {
+  padding: 16px;
+
+  .view-mode-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+
+    .mode-btn {
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #f3f3f3;
+      }
+
+      &.active {
+        background: #007bff;
+        color: #fff;
+        border-color: #007bff;
+      }
+    }
+  }
+
+  /* grid 보기 */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s;
+
+      &:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .image-area {
+        height: 160px;
+        background: #eee;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+      }
+
+      .name {
+        margin-top: 8px;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .price {
+        margin-top: 4px;
+        color: #d32f2f;
+        font-weight: 500;
+      }
+    }
+  }
+
+  /* list (공통) */
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .product-item {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+
+      &:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .name {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .price {
+        color: #d32f2f;
+        font-weight: 500;
+      }
+    }
+
+    &.with-image {
+      .product-item {
+        gap: 16px;
+
+        .image-area {
+          width: 96px;
+          height: 96px;
+          background: #eee;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #888;
+        }
+
+        .info {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+.product-sticky-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  background: #fafafa;
+
+  .header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 10;
+    padding: 16px;
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+  }
+
+  .product-info {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+
+    .product-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .product-image {
+      height: 240px;
+      background: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .product-price {
+      font-size: 16px;
+      font-weight: 600;
+      color: #d32f2f;
+    }
+  }
+
+  .tabs-container {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    z-index: 9;
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+
+      .tab-btn {
+        flex: 1;
+        padding: 12px 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 500;
+        color: #555;
+        border-bottom: 2px solid transparent;
+        transition: 0.2s;
+
+        &:hover {
+          background: #f8f8f8;
+        }
+
+        &.active {
+          color: #007bff;
+          border-bottom: 2px solid #007bff;
+        }
+      }
+    }
+  }
+
+  .tab-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .dummy-area {
+      height: 500px;
+      margin-top: 12px;
+      background: #f3f3f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+    }
+  }
+}

@@ -29,8 +29,12 @@ import {
   ListGuide,
   MarkupGuide,
   ModalGuide,
+  ProductIndex,
+  ProductList,
+  ProductSticky,
   RadioGuide,
   RuleGuide,
+  ScrollPage,
   SearchFormGuide,
   SelectGuide,
   StepGuide,
@@ -88,6 +92,7 @@ export default function Router() {
             <Route path="guide-markup" element={<MarkupGuide />} />
             <Route path="guide-modal" element={<ModalGuide />} />
             <Route path="guide-radio" element={<RadioGuide />} />
+            <Route path="guide-scroll" element={<ScrollPage />} />
             <Route path="guide-search" element={<SearchFormGuide />} />
             <Route path="guide-select" element={<SelectGuide />} />
             <Route path="guide-step" element={<StepGuide />} />
@@ -98,6 +103,10 @@ export default function Router() {
             <Route path="guide-textfield" element={<TextFieldGuide />} />
             <Route path="guide-term" element={<TermGuide />} />
             <Route path="guide-typograph" element={<TypograhpyGuide />} />
+            <Route path="guide-product" element={<ProductIndex />}>
+              <Route index element={<ProductList />} />
+              <Route path=":id" element={<ProductSticky />} />
+            </Route>
           </Route>
         </Route>
 
