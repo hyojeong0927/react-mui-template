@@ -26,69 +26,76 @@ export default function ProductList() {
   ];
 
   return (
-    <div className="product-list-page">
-      {/* 보기 모드 버튼 */}
-      <div className="view-mode-buttons">
-        {viewModes.map(({ key, label }) => (
-          <button
-            key={key}
-            className={`mode-btn ${viewMode === key ? 'active' : ''}`}
-            onClick={() => setViewMode(key)}
-          >
-            {label}
-          </button>
-        ))}
+    <>
+      <div className="guide-page__title">
+        <h2>Product List</h2>
       </div>
-
-      {/* 상품 리스트 */}
-      {viewMode === 'grid' && (
-        <div className="product-grid">
-          {products.map(product => (
-            <div
-              key={product.id}
-              className="product-card"
-              onClick={() => goToDetail(product.id)}
+      <div className="product-list-page">
+        {/* 보기 모드 버튼 */}
+        <div className="view-mode-buttons">
+          {viewModes.map(({ key, label }) => (
+            <button
+              key={key}
+              className={`mode-btn ${viewMode === key ? 'active' : ''}`}
+              onClick={() => setViewMode(key)}
             >
-              <div className="image-area">이미지</div>
-              <div className="name">{product.name}</div>
-              <div className="price">{product.price.toLocaleString()}원</div>
-            </div>
+              {label}
+            </button>
           ))}
         </div>
-      )}
 
-      {viewMode === 'listImage' && (
-        <div className="product-list with-image">
-          {products.map(product => (
-            <div
-              key={product.id}
-              className="product-item"
-              onClick={() => goToDetail(product.id)}
-            >
-              <div className="image-area">이미지</div>
-              <div className="info">
+        {/* 상품 리스트 */}
+        {viewMode === 'grid' && (
+          <div className="product-grid">
+            {products.map(product => (
+              <div
+                key={product.id}
+                className="product-card"
+                onClick={() => goToDetail(product.id)}
+              >
+                <div className="image-area">이미지</div>
                 <div className="name">{product.name}</div>
                 <div className="price">{product.price.toLocaleString()}원</div>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
 
-      {viewMode === 'listNoImage' && (
-        <div className="product-list no-image">
-          {products.map(product => (
-            <div
-              key={product.id}
-              className="product-item"
-              onClick={() => goToDetail(product.id)}
-            >
-              <div className="name">{product.name}</div>
-              <div className="price">{product.price.toLocaleString()}원</div>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+        {viewMode === 'listImage' && (
+          <div className="product-list with-image">
+            {products.map(product => (
+              <div
+                key={product.id}
+                className="product-item"
+                onClick={() => goToDetail(product.id)}
+              >
+                <div className="image-area">이미지</div>
+                <div className="info">
+                  <div className="name">{product.name}</div>
+                  <div className="price">
+                    {product.price.toLocaleString()}원
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {viewMode === 'listNoImage' && (
+          <div className="product-list no-image">
+            {products.map(product => (
+              <div
+                key={product.id}
+                className="product-item"
+                onClick={() => goToDetail(product.id)}
+              >
+                <div className="name">{product.name}</div>
+                <div className="price">{product.price.toLocaleString()}원</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 }

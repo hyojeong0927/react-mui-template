@@ -52,7 +52,8 @@
   .guide-sidebar {
     overflow-y: auto;
     width: 220px;
-    height: calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+    max-height: 100%;
     background-color: #f7f7f7;
     transition: width 0.3s;
     &.collapsed {

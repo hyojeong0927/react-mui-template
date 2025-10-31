@@ -54,49 +54,54 @@ export default function ProductSticky() {
   };
 
   return (
-    <div className="product-sticky-page">
-      {/* 헤더 */}
-      <header className="header">
-        <h1 className="title">상품 상세 페이지</h1>
-      </header>
+    <>
+      <div className="guide-page__title">
+        <h2>상품 상세 페이지</h2>
+      </div>
+      <div className="product-sticky-page">
+        {/* 헤더 */}
+        {/* <header className="header">
+          <h1 className="title">상품 상세 페이지</h1>
+        </header> */}
 
-      {/* 컨텐츠 */}
-      <main className="content" ref={contentRef}>
-        {/* 상품 기본 정보 */}
-        <section className="product-info">
-          <h2 className="product-title">상품명</h2>
-          <div className="product-image">이미지 영역</div>
-          <p className="product-price">가격: 99,000원</p>
-        </section>
-
-        {/* 탭 버튼 */}
-        <div className="tabs-container">
-          <div className="tabs">
-            {tabItems.map((tab, index) => (
-              <button
-                key={index}
-                className={`tab-btn ${activeTab === index ? 'active' : ''}`}
-                onClick={() => scrollToSection(index)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* 탭 콘텐츠 */}
-        {tabItems.map((tab, index) => (
-          <section
-            key={index}
-            ref={el => (sectionRefs.current[index] = el)}
-            className="tab-section"
-          >
-            <h3>{tab.label}</h3>
-            <p>{tab.content}</p>
-            <div className="dummy-area">스크롤 테스트 콘텐츠</div>
+        {/* 컨텐츠 */}
+        <main className="content" ref={contentRef}>
+          {/* 상품 기본 정보 */}
+          <section className="product-info">
+            <h2 className="product-title">상품명</h2>
+            <div className="product-image">이미지 영역</div>
+            <p className="product-price">가격: 99,000원</p>
           </section>
-        ))}
-      </main>
-    </div>
+
+          {/* 탭 버튼 */}
+          <div className="tabs-container">
+            <div className="tabs">
+              {tabItems.map((tab, index) => (
+                <button
+                  key={index}
+                  className={`tab-btn ${activeTab === index ? 'active' : ''}`}
+                  onClick={() => scrollToSection(index)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* 탭 콘텐츠 */}
+          {tabItems.map((tab, index) => (
+            <section
+              key={index}
+              ref={el => (sectionRefs.current[index] = el)}
+              className="tab-section"
+            >
+              <h3>{tab.label}</h3>
+              <p>{tab.content}</p>
+              <div className="dummy-area">스크롤 테스트 콘텐츠</div>
+            </section>
+          ))}
+        </main>
+      </div>
+    </>
   );
 }

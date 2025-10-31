@@ -20,7 +20,10 @@ export default function GuideSidebar() {
       {
         id: 'contents',
         label: 'Contents',
-        children: [{ id: 'product', label: 'Products', to: '/guide-product' }],
+        children: [
+          { id: 'product', label: 'Products', to: '/guide-product' },
+          { id: 'scroll', label: 'Scroll', to: '/guide-scroll' },
+        ],
       },
       {
         id: 'components',
