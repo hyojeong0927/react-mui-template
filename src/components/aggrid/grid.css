@@ -1,0 +1,102 @@
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
+
+.example-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.ag-theme-alpine {
+  width: 100%;
+  height: 100%;
+}
+
+.imgSpan {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.priceIcon {
+  width: 16px;
+  height: 16px;
+}
+
+button {
+  margin-right: 5px;
+  padding: 5px 10px;
+}
+
+.rag-green-outer {
+  background-color: #d4edda;
+}
+.rag-blue-outer {
+  background-color: #cce5ff;
+}
+.rag-red-outer {
+  background-color: #f8d7da;
+}
+/* ✅ 행 hover 효과 */
+.ag-theme-alpine .ag-row-hover {
+  background-color: rgba(0, 123, 255, 0.08) !important;
+  transition: background-color 0.25s ease;
+}
+
+/* ✅ Tooltip 스타일 */
+.ag-tooltip {
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  animation: fadeIn 0.2s ease-in-out;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ag-theme-alpine .ag-row {
+  transition: none !important; /* 높이 변경 시 깜빡임 방지 */
+}
+/* 중복 셀 숨김 처리 */
+.ag-cell.hide-duplicate-cell {
+  color: transparent !important;
+  border-top-color: transparent !important;
+}
+
+/* 같은 그룹끼리 시각적으로 하나로 보이게 */
+.ag-cell.hide-duplicate-cell::before {
+  content: '';
+  display: block;
+  height: 0;
+}
+.ag-theme-alpine .ag-cell[rowspan] {
+  border-bottom: 1px solid #ccc;
+}
+.ag-theme-alpine .ag-cell[rowspan='0'] {
+  visibility: hidden;
+  border-top: none !important;
+  padding: 0 !important;
+  height: 0 !important;
+}
+/* 병합된 셀 아래쪽 테두리 없애기 */
+.ag-cell[cell-row-span='0'] {
+  visibility: hidden;
+}
