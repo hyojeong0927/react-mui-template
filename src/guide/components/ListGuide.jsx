@@ -1,8 +1,9 @@
 import { MixedList } from '@/components';
 
 export default function ListGuide() {
-  const data1 = ['Inbox', 'Drafts', 'Spam'];
-  const data2 = [
+  const dataUl = ['ul-item-01', 'ul-item-02', 'ul-item-03'];
+  const dataOl = ['ol-item-01', 'ol-item-02', 'ol-item-03'];
+  const dataDl = [
     { term: 'HTML', desc: 'Markup language' },
     { term: 'CSS', desc: 'Style language' },
   ];
@@ -17,7 +18,7 @@ export default function ListGuide() {
           <h3>ul</h3>
         </div>
         <div className="guide-page__box--cont">
-          <MixedList component="ul" listValue={data1} />
+          <MixedList component="ul" listValue={dataUl} />
         </div>
       </div>
       <div className="guide-page__box">
@@ -25,7 +26,7 @@ export default function ListGuide() {
           <h3>ol</h3>
         </div>
         <div className="guide-page__box--cont">
-          <MixedList component="ol" listValue={data1} />
+          <MixedList component="ol" listValue={dataOl} />
         </div>
       </div>
       <div className="guide-page__box">
@@ -33,7 +34,7 @@ export default function ListGuide() {
           <h3>dl</h3>
         </div>
         <div className="guide-page__box--cont">
-          <MixedList component="dl" listValue={data2} />
+          <MixedList component="dl" listValue={dataDl} />
         </div>
       </div>
     </>
