@@ -136,7 +136,7 @@ export default function PubStatusPage() {
           <button
             type="button"
             className="btn-status-top"
-            onClick={() => window.open('/guide', '_blank')}
+            onClick={() => window.open('/', '_blank')}
           >
             Guide
           </button>
