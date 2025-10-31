@@ -2,7 +2,7 @@
 @import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 .example-wrapper {
-  height: 100vh;
+  height: calc(100% - 50px);
   display: flex;
   flex-direction: column;
 }
