@@ -5,3 +5,4 @@ export * from './layout';
 export * from './list';
 export * from './selectbox';
 export * from './textfield';
+export * from './typography';
