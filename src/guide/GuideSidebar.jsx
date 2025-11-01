@@ -42,11 +42,11 @@ export default function GuideSidebar() {
             label: 'Text Field',
             to: '/guide-textfield',
           },
-          {
-            id: 'typograph',
-            label: 'Typograhpy',
-            to: '/guide-typograph',
-          },
+          // {
+          //   id: 'typograph',
+          //   label: 'Typograhpy',
+          //   to: '/guide-typograph',
+          // },
         ],
       },
     ],
