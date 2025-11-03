@@ -16,6 +16,7 @@ export default function RuleGuide() {
           <br />이 가이드는 팀 내 의사소통을 효율화하고 프로젝트 진행 시 일관된
           결과물을 생성하는 데 목적이 있습니다.
         </div>
+
         <div className="guide-page__box--tit">
           <h3>기본 원칙 (Core Principles)</h3>
         </div>
@@ -59,6 +60,7 @@ export default function RuleGuide() {
             </tbody>
           </table>
         </div>
+
         <div className="guide-page__box--tit">
           <h3>테스트 및 QA (Testing & QA)</h3>
         </div>
@@ -97,6 +99,7 @@ export default function RuleGuide() {
             </li>
           </ol>
         </div>
+
         <div className="guide-page__box--tit">
           <h3>버전 관리 (Version Control)</h3>
         </div>
@@ -120,7 +123,7 @@ export default function RuleGuide() {
               </tr>
               <tr>
                 <th>Material UI</th>
-                <td>v7.3.4</td>
+                <td>7.3.4</td>
               </tr>
               <tr>
                 <th>Sass</th>

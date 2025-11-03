@@ -166,7 +166,7 @@
         }
       }
       &--cont {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
         color: #666;
         font-size: 0.9rem;
         .MuiList-padding {
@@ -198,6 +198,8 @@
           thead {
             th {
               padding: 5px;
+              font-size: 0.8rem;
+              font-weight: normal;
               text-align: left;
               border-bottom: 1px solid #ddd;
             }
