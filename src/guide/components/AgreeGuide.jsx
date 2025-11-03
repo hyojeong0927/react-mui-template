@@ -5,7 +5,7 @@ import ServiceContent from '../contents/ServiceContent';
 import MarketingContent from '../contents/MarketingContent';
 
 export default function AgreeGuide() {
-  const [agreements, setAgreements] = useState([]);
+  const [selected, setSelected] = useState([]);
 
   const options = [
     {
@@ -36,7 +36,7 @@ export default function AgreeGuide() {
   const handleSubmit = e => {
     e.preventDefault();
     const required = options.filter(o => o.required).map(o => o.value);
-    const missing = required.filter(v => !agreements.includes(v));
+    const missing = required.filter(v => !selected.includes(v));
 
     if (missing.length > 0) {
       alert('필수 약관에 모두 동의해주세요.');
@@ -52,17 +52,16 @@ export default function AgreeGuide() {
       </div>
       <FormGroup onSubmit={handleSubmit}>
         <Agree
-          title="서비스 이용 동의서"
-          subtitle="아래 약관을 확인하고 동의해주세요."
           options={options}
-          value={agreements}
-          onChange={setAgreements}
+          value={selected}
+          onChange={setSelected}
+          subtitle="아래 약관을 확인하고 동의해주세요."
+          children={<p>※ 모든 항목은 필수 선택 사항입니다.</p>}
           contents={contents}
-          showSelectAll
-          selectAllLabel="전체 약관에 동의합니다."
-        >
-          <div>아래 항목 모두 확인 후 동의해주세요.</div>
-        </Agree>
+          showSelectAll={true}
+          selectAllLabel="모두 동의"
+          defaultOpen="first" // 'first', 'all', 'none'
+        />
         <Button type="submit" style={{ marginTop: '20px' }}>
           제출하기
         </Button>
