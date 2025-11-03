@@ -18,6 +18,7 @@ import {
   AccordionGuide,
   AgGridGuide,
   AgreeGuide,
+  BadgesGuide,
   BottomSheetGuide,
   BoxGuide,
   ButtonGuide,
@@ -80,6 +81,7 @@ export default function Router() {
             <Route path="guide-accordion" element={<AccordionGuide />} />
             <Route path="guide-aggrid" element={<AgGridGuide />} />
             <Route path="guide-agree" element={<AgreeGuide />} />
+            <Route path="guide-badge" element={<BadgesGuide />} />
             <Route path="guide-bottomsheet" element={<BottomSheetGuide />} />
             <Route path="guide-box" element={<BoxGuide />} />
             <Route path="guide-button" element={<ButtonGuide />} />

@@ -32,6 +32,7 @@ export default function GuideSidebar() {
           { id: 'accordion', label: 'Accordion', to: '/guide-accordion' },
           { id: 'aggird', label: 'AgGrid', to: '/guide-aggrid' },
           { id: 'agree', label: 'Agree Form', to: '/guide-agree' },
+          { id: 'badge', label: 'Badge', to: '/guide-badge' },
           { id: 'button', label: 'Button', to: '/guide-button' },
           { id: 'checkbox', label: 'Checkbox', to: '/guide-checkbox' },
           { id: 'form', label: 'Form Group', to: '/guide-form' },

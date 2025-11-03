@@ -9,6 +9,7 @@ export { default as TermGuide } from './TermGuide';
 export { default as AccordionGuide } from './components/AccordionGuide';
 export { default as AgGridGuide } from './components/AgGridGuide';
 export { default as AgreeGuide } from './components/AgreeGuide';
+export { default as BadgesGuide } from './components/BadgeGuide';
 export { default as BottomSheetGuide } from './components/BottomSheetGuide';
 export { default as BoxGuide } from './components/BoxGuide';
 export { default as ButtonGuide } from './components/ButtonGuide';
