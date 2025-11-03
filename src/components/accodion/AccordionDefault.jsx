@@ -4,7 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import '@/components/accordion/accordion.scss';
+import '@/styles/accordion/accordion.scss';
 
 export default function AccordionDefault({ accValue = [] }) {
   const [expanded, setExpanded] = useState('panel0');
