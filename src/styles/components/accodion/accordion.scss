@@ -1,0 +1,11 @@
+// ------------------------------------------
+//  Accordion
+// ------------------------------------------
+
+@use './accordion-variables' as btnVars;
+
+.MuiAccordion-root {
+  &.Mui-expanded {
+    margin: 0 !important;
+  }
+}
