@@ -29,6 +29,7 @@ export default function GuideSidebar() {
         id: 'components',
         label: 'Components',
         children: [
+          { id: 'accordion', label: 'Accordion', to: '/guide-accordion' },
           { id: 'aggird', label: 'AgGrid', to: '/guide-aggrid' },
           { id: 'agree', label: 'Agree Form', to: '/guide-agree' },
           { id: 'button', label: 'Button', to: '/guide-button' },
