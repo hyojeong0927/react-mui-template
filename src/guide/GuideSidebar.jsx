@@ -4,15 +4,14 @@ import { List, ListItemButton, ListItemText, Collapse } from '@mui/material';
 import {
   ExpandLess,
   ExpandMore,
-  ChevronRight,
   ChevronLeft,
+  ChevronRight,
 } from '@mui/icons-material';
 import './guide.scss';
 
-export default function GuideSidebar() {
+export default function GuideSidebar({ collapsed, setCollapsed }) {
   const location = useLocation();
   const [openMenu, setOpenMenu] = useState(null);
-  const [collapsed, setCollapsed] = useState(false);
 
   const navItems = useMemo(
     () => [
@@ -30,7 +29,7 @@ export default function GuideSidebar() {
         label: 'Components',
         children: [
           { id: 'accordion', label: 'Accordion', to: '/guide-accordion' },
-          { id: 'aggird', label: 'AgGrid', to: '/guide-aggrid' },
+          { id: 'aggrid', label: 'AgGrid', to: '/guide-aggrid' },
           { id: 'agree', label: 'Agree Form', to: '/guide-agree' },
           { id: 'badge', label: 'Badge', to: '/guide-badge' },
           { id: 'button', label: 'Button', to: '/guide-button' },
@@ -39,16 +38,8 @@ export default function GuideSidebar() {
           { id: 'list', label: 'List', to: '/guide-list' },
           { id: 'radio', label: 'Radio', to: '/guide-radio' },
           { id: 'select', label: 'Select', to: '/guide-select' },
-          {
-            id: 'textfield',
-            label: 'Text Field',
-            to: '/guide-textfield',
-          },
-          {
-            id: 'typograph',
-            label: 'Typograhpy',
-            to: '/guide-typograph',
-          },
+          { id: 'textfield', label: 'Text Field', to: '/guide-textfield' },
+          { id: 'typograph', label: 'Typography', to: '/guide-typograph' },
         ],
       },
     ],
@@ -63,12 +54,11 @@ export default function GuideSidebar() {
   }, [location.pathname, navItems]);
 
   const handleToggle = id => setOpenMenu(prev => (prev === id ? null : id));
-  const toggleSidebar = () => setCollapsed(prev => !prev);
 
   return (
     <aside className={`guide-sidebar ${collapsed ? 'collapsed' : ''}`}>
-      {/* 사이드바 토글 버튼 */}
-      <div className="sidebar-toggle" onClick={toggleSidebar}>
+      {/* 데스크톱용 사이드바 접기 버튼 */}
+      <div className="sidebar-toggle" onClick={() => setCollapsed(!collapsed)}>
         {collapsed ? <ChevronRight /> : <ChevronLeft />}
       </div>
 
@@ -80,12 +70,12 @@ export default function GuideSidebar() {
           return (
             <div
               key={item.id}
-              className={`guide-sidebar__group ${hasChildren && isOpen ? 'open' : ''}`}
+              className={`guide-sidebar__group ${isOpen ? 'open' : ''}`}
             >
               {hasChildren ? (
                 <ListItemButton
                   onClick={() => handleToggle(item.id)}
-                  className={`guide-sidebar__link ${isOpen ? 'active' : ''} ${collapsed ? 'collapsed' : ''}`}
+                  className={`guide-sidebar__link ${isOpen ? 'active' : ''}`}
                 >
                   {!collapsed && <ListItemText primary={item.label} />}
                   {!collapsed && (isOpen ? <ExpandLess /> : <ExpandMore />)}
@@ -96,7 +86,6 @@ export default function GuideSidebar() {
                   to={item.to}
                   end
                   className="guide-sidebar__link"
-                  onClick={() => setOpenMenu(null)}
                 >
                   {!collapsed && <ListItemText primary={item.label} />}
                 </ListItemButton>

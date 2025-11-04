@@ -153,14 +153,14 @@ export default function AgGridGuide() {
       </div>
       <div className="example-wrapper">
         <div style={{ marginBottom: '5px' }}>
-          <button onClick={() => setWidthAndHeight('100%', '50%')}>
+          <button onClick={() => setWidthAndHeight('100%', '100%')}>
             Fill 100%
           </button>
           <button onClick={() => setWidthAndHeight('60%', '60%')}>
             Fill 60%
           </button>
-          <button onClick={() => setWidthAndHeight('400px', '400px')}>
-            400 x 400
+          <button onClick={() => setWidthAndHeight('350px', '350px')}>
+            350 x 350
           </button>
         </div>
 

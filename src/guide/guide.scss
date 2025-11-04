@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+  word-break: keep-all;
+}
 .guide-container {
   display: flex;
   flex-wrap: wrap;
@@ -28,10 +32,24 @@
       color: #fff;
       font-size: 1.2rem;
     }
+    .btn-sidebar-toggle {
+      display: none;
+      padding: 0.5rem;
+      min-width: 40px;
+      background-color: transparent;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+    }
     .nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 10px;
       margin-left: auto;
       a {
         display: block;
@@ -46,8 +64,11 @@
     }
   }
   .guide-main {
+    overflow-x: hidden;
+    overflow-y: auto;
     flex: 1;
-    padding: 16px 20px;
+    padding: 20px 25px;
+    max-height: calc(100vh - 93px);
   }
   .guide-sidebar {
     overflow-y: auto;
@@ -55,9 +76,12 @@
     min-height: calc(100vh - 50px);
     max-height: 100%;
     background-color: #f7f7f7;
-    transition: width 0.3s;
+    transition: width 0.3s ease;
     &.collapsed {
       width: 45px;
+      .MuiList-root {
+        padding: 0;
+      }
     }
 
     .sidebar-toggle {
@@ -173,37 +197,39 @@
           padding-left: 10px;
         }
         ol {
-          counter-reset: item;
-          > li {
-            counter-increment: item;
-            &::before {
-              content: '(' counter(item) ') ';
-              display: inline-block;
-              width: 25px;
-            }
-            h4 {
-              display: inline-block;
-            }
-            ul {
-              margin-left: 25px;
-              li {
-                position: relative;
-                padding-left: 1em;
-                &::before {
-                  content: '•';
-                  position: absolute;
-                  left: 0;
-                  color: #333;
-                }
-                ul {
-                  margin-left: 0;
-                  li {
-                    position: relative;
+          &:not(.MuiList-root) {
+            counter-reset: item;
+            > li {
+              counter-increment: item;
+              &::before {
+                content: '(' counter(item) ') ';
+                display: inline-block;
+                width: 25px;
+              }
+              h4 {
+                display: inline-block;
+              }
+              ul {
+                margin-left: 25px;
+                li {
+                  position: relative;
+                  padding-left: 1em;
+                  &::before {
+                    content: '•';
+                    position: absolute;
+                    left: 0;
+                    color: #333;
+                  }
+                  ul {
+                    margin-left: 0;
+                    li {
+                      position: relative;
 
-                    &::before {
-                      content: '-';
-                      position: absolute;
-                      left: 0;
+                      &::before {
+                        content: '-';
+                        position: absolute;
+                        left: 0;
+                      }
                     }
                   }
                 }
@@ -212,7 +238,7 @@
           }
         }
         table {
-          width: 50%;
+          width: 62%;
           caption {
             position: absolute;
             left: -999999rem;
@@ -241,14 +267,52 @@
 }
 
 @media (max-width: 768px) {
-  .guide-sidebar {
-    position: fixed;
-    left: -240px;
-    top: 0;
-    height: 100%;
-    z-index: 1000;
-    &.open {
+  .guide-container {
+    .guide-header {
+      .btn-sidebar-toggle {
+        display: inline-flex;
+      }
+    }
+
+    .guide-sidebar {
+      display: none;
+      position: fixed;
       left: 0;
+      top: 0;
+      height: 100%;
+      z-index: 1000;
+
+      &.open {
+        transform: translateX(0);
+      }
+      &.collapsed {
+        width: 240px !important;
+      }
+      .sidebar-toggle {
+        display: none !important;
+      }
+    }
+    &.sidebar-open {
+      .guide-main {
+        pointer-events: none;
+      }
+      .guide-sidebar {
+        display: block;
+        top: 50px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        .sidebar-toggle {
+          display: none;
+        }
+      }
+    }
+    .guide-page {
+      &__box {
+        &--cont {
+          table {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
