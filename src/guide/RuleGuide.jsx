@@ -141,7 +141,7 @@ export default function RuleGuide() {
         <div className="guide-page__box--cont">
           <ol>
             <li>
-              <h4>브라우저 호환성</h4>
+              브라우저 호환성
               <ul>
                 <li>지원 브라우저 : Chrome, Edge</li>
                 <li>
@@ -154,7 +154,7 @@ export default function RuleGuide() {
               </ul>
             </li>
             <li>
-              <h4>접근성 점검</h4>
+              접근성 점검
               <ul>
                 <li>검사 도구: WAVE, axe, Lighthouse</li>
                 <li>검수 기준: 전자정부 웹 접근성 지침에 부합 여부</li>
