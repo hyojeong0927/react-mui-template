@@ -7,7 +7,7 @@ export default function RuleGuide() {
 
       <div className="guide-page__box">
         <div className="guide-page__box--tit">
-          <h3>목적 (Purpose)</h3>
+          <h3>1. 목적 (Purpose)</h3>
         </div>
         <div className="guide-page__box--cont">
           웹퍼블리싱 가이드는 웹사이트를 개발, 운영, 유지보수하는 과정에서 코드
@@ -18,7 +18,7 @@ export default function RuleGuide() {
         </div>
 
         <div className="guide-page__box--tit">
-          <h3>기본 원칙 (Core Principles)</h3>
+          <h3>2. 기본 원칙 (Core Principles)</h3>
         </div>
         <div className="guide-page__box--cont">
           <table>
@@ -58,7 +58,7 @@ export default function RuleGuide() {
           </table>
         </div>
         <div className="guide-page__box--tit">
-          <h3>접근성 (Accessibility)</h3>
+          <h3>3. 접근성 (Accessibility)</h3>
         </div>
         <div className="guide-page__box--cont">
           <ol>
@@ -77,7 +77,7 @@ export default function RuleGuide() {
           </ol>
         </div>
         <div className="guide-page__box--tit">
-          <h3>코딩 규칙 (Coding Rules)</h3>
+          <h3>4. 코딩 규칙 (Coding Rules)</h3>
         </div>
         <div className="guide-page__box--cont">
           퍼블리싱 작업 전반에 적용되는 세부 코드 규칙을 정의합니다.
@@ -116,7 +116,7 @@ export default function RuleGuide() {
           </ol>
         </div>
         <div className="guide-page__box--tit">
-          <h3>디자인 가이드라인 (Design Guidelines)</h3>
+          <h3>5. 디자인 가이드라인 (Design Guidelines)</h3>
         </div>
         <div className="guide-page__box--cont">
           <ol>
@@ -126,7 +126,7 @@ export default function RuleGuide() {
           </ol>
         </div>
         <div className="guide-page__box--tit">
-          <h3>성능 최적화 (Performance Optimization)</h3>
+          <h3>6. 성능 최적화 (Performance Optimization)</h3>
         </div>
         <div className="guide-page__box--cont">
           <ol>
@@ -136,7 +136,7 @@ export default function RuleGuide() {
           </ol>
         </div>
         <div className="guide-page__box--tit">
-          <h3>테스트 및 QA (Testing & QA)</h3>
+          <h3>7. 테스트 및 QA (Testing & QA)</h3>
         </div>
         <div className="guide-page__box--cont">
           <ol>
@@ -164,7 +164,7 @@ export default function RuleGuide() {
         </div>
 
         <div className="guide-page__box--tit">
-          <h3>버전 관리 (Version Management)</h3>
+          <h3>8. 버전 관리 (Version Management)</h3>
         </div>
         <div className="guide-page__box--cont">
           <table>

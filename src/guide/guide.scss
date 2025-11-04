@@ -177,15 +177,15 @@
           > li {
             counter-increment: item;
             &::before {
-              content: counter(item) '. ';
+              content: '(' counter(item) ') ';
               display: inline-block;
-              width: 20px;
+              width: 25px;
             }
             h4 {
               display: inline-block;
             }
             ul {
-              margin-left: 20px;
+              margin-left: 25px;
               li {
                 position: relative;
                 padding-left: 1em;
