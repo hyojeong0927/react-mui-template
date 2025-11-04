@@ -1,7 +1,6 @@
 export default function ServiceContent() {
   return (
-    <div>
-      <br />
+    <div style={{ padding: '0 45px' }}>
       <h4>서비스 이용 약관</h4>
       <p>
         본 약관은 서비스 이용에 관한 조건과 절차를 규정합니다. <br />

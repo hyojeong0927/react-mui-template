@@ -38,7 +38,13 @@ export default function CustomPagination({ gridApi }) {
 
   return (
     <div
-      style={{ display: 'flex', gap: 5, marginTop: 10, alignItems: 'center' }}
+      style={{
+        display: 'flex',
+        gap: 5,
+        marginTop: 10,
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      }}
     >
       <button onClick={() => goToPage(1)} disabled={currentPage === 1}>
         ⏮ First

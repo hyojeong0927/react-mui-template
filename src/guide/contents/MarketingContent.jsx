@@ -1,7 +1,6 @@
 export default function MarketingContent() {
   return (
-    <div>
-      <br />
+    <div style={{ padding: '0 45px' }}>
       <h4>마케팅 정보 수신 안내</h4>
       <p>
         마케팅 수신 동의는 선택 사항이며, 동의하지 않아도 서비스 이용이

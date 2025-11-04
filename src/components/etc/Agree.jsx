@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Button } from '@/components/';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -67,7 +68,7 @@ export default function Agree({
 
       {/* 전체 동의 체크박스 */}
       {showSelectAll && (
-        <div className="agree-footer">
+        <div className="agree-header">
           <label className="agree-selectall">
             <Checkbox
               checked={isAll}
@@ -79,13 +80,13 @@ export default function Agree({
           </label>
 
           {/* 모두 열기/닫기 버튼 */}
-          <button
-            type="button"
+          <Button
+            variant="outline"
             className="agree-toggle-all"
             onClick={handleToggleAllAccordion}
           >
             {allOpen ? '모두 닫기' : '모두 열기'}
-          </button>
+          </Button>
         </div>
       )}
 

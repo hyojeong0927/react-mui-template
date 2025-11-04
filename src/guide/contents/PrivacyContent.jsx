@@ -1,7 +1,6 @@
 export default function PrivacyContent() {
   return (
-    <div>
-      <br />
+    <div style={{ padding: '0 45px' }}>
       <h4>개인정보 수집 및 이용 안내</h4>
       <p>
         수집하는 개인정보의 항목: 이름, 이메일, 연락처 등 <br />
