@@ -186,6 +186,28 @@
             }
             ul {
               margin-left: 20px;
+              li {
+                position: relative;
+                padding-left: 1em;
+                &::before {
+                  content: '•';
+                  position: absolute;
+                  left: 0;
+                  color: #333;
+                }
+                ul {
+                  margin-left: 0;
+                  li {
+                    position: relative;
+
+                    &::before {
+                      content: '-';
+                      position: absolute;
+                      left: 0;
+                    }
+                  }
+                }
+              }
             }
           }
         }

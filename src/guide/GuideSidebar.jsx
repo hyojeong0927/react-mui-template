@@ -16,7 +16,7 @@ export default function GuideSidebar() {
 
   const navItems = useMemo(
     () => [
-      { id: 'rule', label: 'Rule', to: '/' },
+      { id: 'rule', label: 'Guide', to: '/' },
       {
         id: 'contents',
         label: 'Contents',
