@@ -2,28 +2,7 @@ import { Link as RouterLink, useLocation } from 'react-router-dom';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-
-// 경로 → 한글명 매핑
-const pathNameMap = {
-  // dashboard: '대시보드',
-  // pages: '페이지',
-  // user: '사용자',
-  // detail: '상세',
-  'guide-product': 'Product',
-  'guide-scroll': 'Scroll',
-  'guide-badge': 'Badge',
-  'guide-accordion': 'Accordion',
-  'guide-aggrid': 'Ag Grid',
-  'guide-agree': 'Agree Form',
-  'guide-button': 'Button',
-  'guide-checkbox': 'Checkbox',
-  'guide-form': 'Form',
-  'guide-list': 'List',
-  'guide-radio': 'Radio',
-  'guide-select': 'Select Box',
-  'guide-textfield': 'Text Field',
-  'guide-typograph': 'Typography',
-};
+import pathNameMap from '@/config/pathNameMap';
 
 export default function BasicBreadcrumbs() {
   const location = useLocation();

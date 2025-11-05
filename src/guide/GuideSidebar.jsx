@@ -36,6 +36,7 @@ export default function GuideSidebar({ collapsed, setCollapsed }) {
           { id: 'checkbox', label: 'Checkbox', to: '/guide-checkbox' },
           { id: 'form', label: 'Form Group', to: '/guide-form' },
           { id: 'list', label: 'List', to: '/guide-list' },
+          { id: 'popup', label: 'Popup', to: '/guide-popup' },
           { id: 'radio', label: 'Radio', to: '/guide-radio' },
           { id: 'select', label: 'Select', to: '/guide-select' },
           { id: 'textfield', label: 'Text Field', to: '/guide-textfield' },

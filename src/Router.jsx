@@ -29,7 +29,7 @@ import {
   LayoutGuide,
   ListGuide,
   MarkupGuide,
-  ModalGuide,
+  PopupGuide,
   ProductIndex,
   ProductList,
   ProductSticky,
@@ -92,7 +92,7 @@ export default function Router() {
             <Route path="guide-layout" element={<LayoutGuide />} />
             <Route path="guide-list" element={<ListGuide />} />
             <Route path="guide-markup" element={<MarkupGuide />} />
-            <Route path="guide-modal" element={<ModalGuide />} />
+            <Route path="guide-popup" element={<PopupGuide />} />
             <Route path="guide-radio" element={<RadioGuide />} />
             <Route path="guide-scroll" element={<ScrollPage />} />
             <Route path="guide-search" element={<SearchFormGuide />} />
