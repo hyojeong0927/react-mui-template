@@ -28,7 +28,7 @@ export default function PopupGuide() {
             open={open}
             onClose={() => setOpen(false)}
             onConfirm={handleConfirm}
-            confirmText="삭제"
+            confirmText="저장"
             cancelText="취소"
           >
             <div

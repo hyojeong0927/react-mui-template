@@ -25,8 +25,8 @@ export default function CustomizedDialogs({
   open,
   onClose,
   onConfirm,
-  confirmText = '확인',
-  cancelText = '취소',
+  confirmText = null,
+  cancelText = null,
 }) {
   const descriptionElementRef = useRef(null);
 
@@ -69,10 +69,12 @@ export default function CustomizedDialogs({
           </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={onClose}>{cancelText}</Button>
-          <Button variant="contained" onClick={onConfirm}>
-            {confirmText}
-          </Button>
+          {cancelText && <Button onClick={onClose}>{cancelText}</Button>}
+          {confirmText && (
+            <Button variant="contained" onClick={onConfirm}>
+              {confirmText}
+            </Button>
+          )}
         </DialogActions>
       </BootstrapDialog>
     </>
