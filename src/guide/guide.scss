@@ -170,6 +170,11 @@ body {
       }
     }
   }
+  .MuiBreadcrumbs-root {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
   .guide-page {
     &__title {
       margin-bottom: 20px;

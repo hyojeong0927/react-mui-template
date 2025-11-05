@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Button } from '@/components/';
+import { Button, BasicBreadcrumbs } from '@/components/';
 import GuideSidebar from './GuideSidebar';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -51,6 +51,7 @@ export default function GuideIndex() {
       <GuideSidebar collapsed={collapsed} setCollapsed={setCollapsed} />
 
       <main className="guide-main">
+        <BasicBreadcrumbs />
         <Outlet />
       </main>
     </section>

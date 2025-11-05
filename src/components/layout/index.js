@@ -1,4 +1,4 @@
-export { default as Breadcrumbs } from './Breadcrumbs';
+export { default as BasicBreadcrumbs } from './Breadcrumbs';
 export { default as Container } from './Container';
 export { default as Footer } from './Footer';
 export { default as FormGroup } from './FormGroup';
