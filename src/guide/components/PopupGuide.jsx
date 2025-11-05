@@ -1,8 +1,14 @@
 import { useState } from 'react';
-import { AlertDialog, CustomizedDialogs, Button } from '@/components/';
+import {
+  AlertDialog,
+  CustomizedDialogs,
+  CusotmBottomSheet,
+  Button,
+} from '@/components/';
 
 export default function PopupGuide() {
   const [open, setOpen] = useState(false);
+  const [openBottomSheet, setBottomSheetOpen] = useState(false);
   const [openAlert, setOpenAlert] = useState(false);
   const handleConfirm = () => {
     console.log('확인 클릭됨!');
@@ -19,9 +25,7 @@ export default function PopupGuide() {
           <h3>Alert</h3>
         </div>
         <div className="guide-page__box--cont">
-          <Button variant="outlined" onClick={() => setOpenAlert(true)}>
-            Open Alert
-          </Button>
+          <Button onClick={() => setOpenAlert(true)}>Open Alert</Button>
           <AlertDialog
             title="제목"
             open={openAlert}
@@ -37,16 +41,26 @@ export default function PopupGuide() {
         <div className="guide-page__box--tit">
           <h3>Bottom Sheet</h3>
         </div>
-        <div className="guide-page__box--cont"></div>
+        <div className="guide-page__box--cont">
+          <Button onClick={() => setBottomSheetOpen(true)}>
+            Open Bottom Sheet
+          </Button>
+          <CusotmBottomSheet
+            open={openBottomSheet}
+            onClose={() => setBottomSheetOpen(false)}
+            title="옵션 선택"
+            height="60vh"
+          >
+            여기에 내용...
+          </CusotmBottomSheet>
+        </div>
       </div>
       <div className="guide-page__box">
         <div className="guide-page__box--tit">
           <h3>Dialog</h3>
         </div>
         <div className="guide-page__box--cont">
-          <Button variant="outlined" onClick={() => setOpen(true)}>
-            Open dialog
-          </Button>
+          <Button onClick={() => setOpen(true)}>Open dialog</Button>
           <CustomizedDialogs
             modalTitle="제목"
             modalSize="lg"
