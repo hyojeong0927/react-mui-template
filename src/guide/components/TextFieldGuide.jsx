@@ -1,6 +1,17 @@
-import { BasicTextField } from '@/components/';
+import { useState } from 'react';
+import {
+  BasicTextField,
+  MuiDatePicker,
+  MuiDateRangePicker,
+} from '@/components/';
+import dayjs from 'dayjs';
 
 export default function TextFieldGuide() {
+  const [date, setDate] = useState(dayjs());
+  const [range, setRange] = useState([
+    dayjs().startOf('month'),
+    dayjs().endOf('month'),
+  ]);
   return (
     <>
       <div className="guide-page__title">
@@ -83,6 +94,28 @@ export default function TextFieldGuide() {
             value="읽기 전용"
             helperText=""
             placeholder=""
+          />
+        </div>
+      </div>
+      {/* DatePicker */}
+      <div className="guide-page__box">
+        <div className="guide-page__box--tit">
+          <h3>DatePicker</h3>
+        </div>
+        <div className="guide-page__box--cont">
+          <MuiDatePicker label="날짜 선택" value={date} onChange={setDate} />
+        </div>
+      </div>
+      {/* DateRangePicker */}
+      <div className="guide-page__box">
+        <div className="guide-page__box--tit">
+          <h3>DateRangePicker</h3>
+        </div>
+        <div className="guide-page__box--cont">
+          <MuiDateRangePicker
+            value={range}
+            onChange={setRange}
+            defaultValue={[dayjs(), dayjs()]}
           />
         </div>
       </div>

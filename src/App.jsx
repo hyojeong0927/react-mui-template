@@ -1,7 +1,12 @@
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import 'dayjs/locale/ko';
 import Router from './Router';
 
-const App = () => {
-  return <Router />;
-};
-
-export default App;
+export default function App() {
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ko">
+      <Router />
+    </LocalizationProvider>
+  );
+}
