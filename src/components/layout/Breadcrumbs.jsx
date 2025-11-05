@@ -22,7 +22,7 @@ const pathNameMap = {
   'guide-radio': 'Radio',
   'guide-select': 'Select Box',
   'guide-textfield': 'Text Field',
-  'guide-typograph': 'Typograph',
+  'guide-typograph': 'Typography',
 };
 
 export default function BasicBreadcrumbs() {
