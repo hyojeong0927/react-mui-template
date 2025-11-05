@@ -19,7 +19,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 export default function CustomizedDialogs({
   modalTitle = '',
-  modalSize = 'md', // sm/md/lg
+  modalSize = 'md',
   scroll = 'paper',
   children,
   open,
@@ -32,51 +32,51 @@ export default function CustomizedDialogs({
 
   useEffect(() => {
     if (open) {
-      const { current: element } = descriptionElementRef;
-      if (element !== null) {
-        element.focus();
-      }
+      descriptionElementRef.current?.focus();
     }
   }, [open]);
+
   return (
-    <>
-      <BootstrapDialog
-        maxWidth={modalSize}
-        scroll={scroll}
-        open={open}
-        onClose={onClose}
-        aria-labelledby="customized-dialog-title"
-        aria-describedby="customized-dialog-description"
+    <BootstrapDialog
+      maxWidth={modalSize}
+      scroll={scroll}
+      open={open}
+      onClose={onClose}
+      disableRestoreFocus
+      aria-labelledby="customized-dialog-title"
+      aria-describedby="customized-dialog-description"
+    >
+      <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+        {modalTitle}
+      </DialogTitle>
+
+      <IconButton
+        aria-label="close"
+        onClick={onClose}
+        sx={theme => ({
+          position: 'absolute',
+          right: 8,
+          top: 8,
+          color: theme.palette.grey[500],
+        })}
       >
-        <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
-          {modalTitle}
-        </DialogTitle>
-        <IconButton
-          aria-label="close"
-          onClick={onClose}
-          sx={theme => ({
-            position: 'absolute',
-            right: 8,
-            top: 8,
-            color: theme.palette.grey[500],
-          })}
-        >
-          <CloseIcon />
-        </IconButton>
-        <DialogContent dividers={scroll === 'paper'}>
-          <div ref={descriptionElementRef} tabIndex={-1}>
-            {children}
-          </div>
-        </DialogContent>
-        <DialogActions>
-          {cancelText && <Button onClick={onClose}>{cancelText}</Button>}
-          {confirmText && (
-            <Button variant="contained" onClick={onConfirm}>
-              {confirmText}
-            </Button>
-          )}
-        </DialogActions>
-      </BootstrapDialog>
-    </>
+        <CloseIcon />
+      </IconButton>
+
+      <DialogContent dividers={scroll === 'paper'}>
+        <div ref={descriptionElementRef} tabIndex={-1}>
+          {children}
+        </div>
+      </DialogContent>
+
+      <DialogActions>
+        {cancelText && <Button onClick={onClose}>{cancelText}</Button>}
+        {confirmText && (
+          <Button variant="contained" onClick={onConfirm}>
+            {confirmText}
+          </Button>
+        )}
+      </DialogActions>
+    </BootstrapDialog>
   );
 }
