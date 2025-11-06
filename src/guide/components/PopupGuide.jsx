@@ -4,12 +4,15 @@ import {
   CustomizedDialogs,
   CusotmBottomSheet,
   Button,
+  BasicSnackbar,
 } from '@/components/';
 
 export default function PopupGuide() {
   const [open, setOpen] = useState(false);
   const [openBottomSheet, setBottomSheetOpen] = useState(false);
   const [openAlert, setOpenAlert] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+
   const handleConfirm = () => {
     console.log('확인 클릭됨!');
     setOpen(false);
@@ -81,15 +84,18 @@ export default function PopupGuide() {
       </div>
       <div className="guide-page__box">
         <div className="guide-page__box--tit">
-          <h3>Floating Bar</h3>
-        </div>
-        <div className="guide-page__box--cont"></div>
-      </div>
-      <div className="guide-page__box">
-        <div className="guide-page__box--tit">
           <h3>Snackbar</h3>
         </div>
-        <div className="guide-page__box--cont"></div>
+        <div className="guide-page__box--cont">
+          <Button onClick={() => setOpenSnackbar(true)}>Show Snackbar</Button>
+          <BasicSnackbar
+            open={openSnackbar}
+            onClose={() => setOpenSnackbar(false)}
+            message="저장이 완료되었습니다."
+            severity="success"
+            position="top"
+          />
+        </div>
       </div>
     </>
   );
