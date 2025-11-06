@@ -1,4 +1,5 @@
 const pathNameMap = {
+  'guide-account': 'Account',
   'guide-product': 'Product',
   'guide-scroll': 'Scroll',
   'guide-badge': 'Badge',

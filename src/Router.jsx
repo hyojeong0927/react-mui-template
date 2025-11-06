@@ -16,6 +16,7 @@ import GuideIndex from '@/guide/GuideIndex';
 // guide
 import {
   AccordionGuide,
+  AccountPage,
   AgGridGuide,
   AgreeGuide,
   BadgesGuide,
@@ -78,6 +79,7 @@ export default function Router() {
           <Route path="/" element={<GuideIndex />}>
             <Route index element={<RuleGuide />} />
             <Route path="guide-accordion" element={<AccordionGuide />} />
+            <Route path="guide-account" element={<AccountPage />} />
             <Route path="guide-aggrid" element={<AgGridGuide />} />
             <Route path="guide-agree" element={<AgreeGuide />} />
             <Route path="guide-badge" element={<BadgesGuide />} />

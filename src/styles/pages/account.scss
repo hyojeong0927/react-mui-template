@@ -1,0 +1,82 @@
+.transaction {
+  &__bank {
+    font-size: 14px;
+    color: #777;
+  }
+
+  &__number {
+    font-weight: 600;
+  }
+
+  &__balance {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 8px;
+  }
+
+  &__buttons {
+    margin-top: 16px;
+  }
+
+  &__filters {
+    padding: 16px;
+  }
+
+  &__group {
+    margin-top: 16px;
+  }
+
+  &__date {
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #666;
+  }
+
+  &__item {
+    padding: 14px 16px;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__amount.deposit {
+    color: #1a7f37; // 입금 초록
+  }
+
+  &__amount.withdraw {
+    color: #d32f2f; // 출금 빨강
+  }
+
+  &__time,
+  &__remain {
+    font-size: 12px;
+    color: #888;
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 32px;
+  }
+}
+
+.transaction__item.mobile {
+  flex-direction: column;
+  align-items: flex-start;
+
+  .transaction__title,
+  .transaction__amount {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1200px) {
+  .transaction {
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 600px) {
+  .transaction {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

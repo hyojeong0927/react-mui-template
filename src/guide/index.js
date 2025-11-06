@@ -27,6 +27,7 @@ export { default as TabsGuide } from './components/TabsGuide';
 export { default as TextFieldGuide } from './components/TextFieldGuide';
 export { default as TypograhpyGuide } from './components/TypograhpyGuide';
 // contents
+export { default as AccountPage } from './contents/AccountContent';
 export { default as ProductIndex } from './contents/ProductIndex';
 export { default as ProductList } from './contents/ProductList';
 export { default as ScrollPage } from './contents/ScrollPage';

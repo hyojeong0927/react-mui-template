@@ -20,6 +20,7 @@ export default function GuideSidebar({ collapsed, setCollapsed }) {
         id: 'contents',
         label: 'Contents',
         children: [
+          { id: 'account', label: 'Account', to: '/guide-account' },
           { id: 'product', label: 'Products', to: '/guide-product' },
           { id: 'scroll', label: 'Scroll', to: '/guide-scroll' },
         ],
