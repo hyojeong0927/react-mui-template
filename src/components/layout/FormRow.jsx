@@ -1,4 +1,4 @@
-export default function FormRow({ title, required, children, row }) {
+export default function FormRow({ title, required, children, inline }) {
   return (
     <div className="form-row" style={{ marginBottom: '16px' }}>
       {title && (
@@ -16,7 +16,7 @@ export default function FormRow({ title, required, children, row }) {
         </div>
       )}
 
-      <div className={`form-row__item ${row ? 'flex' : ''}`}>{children}</div>
+      <div className={`form-row__item ${inline ? 'flex' : ''}`}>{children}</div>
     </div>
   );
 }

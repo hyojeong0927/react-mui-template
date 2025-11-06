@@ -50,11 +50,11 @@ export default function FormGroupGuide() {
                 id="name"
                 label=""
                 propValue={name}
-                onChange={e => setName(e.target.value)}
+                onChange={setName}
                 placeholder="이름을 입력하세요"
                 required
-                error={name}
-                helperText={name ? '필수 입력입니다.' : ''}
+                error={!name}
+                helperText={!name ? '필수 입력입니다.' : ''}
               />
             </FormRow>
             <FormRow title="비밀번호" required>
@@ -63,14 +63,14 @@ export default function FormGroupGuide() {
                 label=""
                 type="password"
                 propValue={pw}
-                onChange={e => setPw(e.target.value)}
+                onChange={setPw}
                 placeholder="비밀번호 입력"
                 required
                 error={!pw}
                 helperText={!pw ? '필수 입력입니다.' : ''}
               />
             </FormRow>
-            <FormRow title="연락처" required row>
+            <FormRow title="연락처" required inline>
               <BasicSelect
                 id="choice"
                 label=""
@@ -88,7 +88,7 @@ export default function FormGroupGuide() {
                 id="phone-first"
                 label=""
                 propValue={phone01}
-                onChange={e => setPhone01(e.target.value)}
+                onChange={setPhone01}
                 placeholder="첫번째"
                 required
                 error={!phone01}
@@ -97,7 +97,7 @@ export default function FormGroupGuide() {
                 id="phone-second"
                 label=""
                 propValue={phone02}
-                onChange={e => setPhone02(e.target.value)}
+                onChange={setPhone02}
                 placeholder="마지막"
                 required
                 error={!phone02}
