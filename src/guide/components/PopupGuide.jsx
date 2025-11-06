@@ -52,7 +52,7 @@ export default function PopupGuide() {
             open={openBottomSheet}
             onClose={() => setBottomSheetOpen(false)}
             title="옵션 선택"
-            height="60vh"
+            height={60}
           >
             여기에 내용...
           </CusotmBottomSheet>
