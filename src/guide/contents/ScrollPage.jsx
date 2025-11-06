@@ -27,24 +27,27 @@ export default function ScrollButtonPage() {
 
   return (
     <>
-      <div className="guide-page__title">
-        <h2>지정 영역 스크롤 감지 예시</h2>
-      </div>
+      <div className="guide-page__box">
+        <div className="guide-page__title">
+          <h2>지정 영역 스크롤 감지 예시</h2>
+        </div>
+        <div className="guide-page__box--cont">
+          <div className="scroll-area" ref={scrollRef}>
+            {[...Array(30)].map((_, i) => (
+              <p key={i}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 스크롤
+                영역 안에서만 감지됩니다. ({i + 1})
+              </p>
+            ))}
+          </div>
 
-      <div className="scroll-area" ref={scrollRef}>
-        {[...Array(30)].map((_, i) => (
-          <p key={i}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 스크롤 영역
-            안에서만 감지됩니다. ({i + 1})
-          </p>
-        ))}
+          {isBottom && (
+            <button className="scroll-btn" onClick={handleClick}>
+              영역 끝까지 스크롤 완료!
+            </button>
+          )}
+        </div>
       </div>
-
-      {isBottom && (
-        <button className="scroll-btn" onClick={handleClick}>
-          영역 끝까지 스크롤 완료!
-        </button>
-      )}
     </>
   );
 }
