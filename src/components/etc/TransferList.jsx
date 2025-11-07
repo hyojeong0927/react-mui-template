@@ -62,8 +62,8 @@ export default function TransferList({ leftData, rightData, onChange }) {
   };
 
   return (
-    <Grid container spacing={2} alignItems="center" justifyContent="center">
-      <Grid>{renderList('Left', left)}</Grid>
+    <Grid container spacing={2} alignItems="baseline" justifyContent="center">
+      <Grid sx={{ flex: '1' }}>{renderList('Left', left)}</Grid>
 
       <Grid>
         <Grid container direction="column" alignItems="center">
@@ -98,7 +98,7 @@ export default function TransferList({ leftData, rightData, onChange }) {
         </Grid>
       </Grid>
 
-      <Grid>{renderList('Right', right)}</Grid>
+      <Grid sx={{ flex: '1' }}>{renderList('Right', right)}</Grid>
     </Grid>
   );
 }
