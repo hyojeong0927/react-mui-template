@@ -31,7 +31,7 @@ export default function GuideIndex() {
       } ${collapsed ? 'collapsed' : ''}`}
     >
       <header className="guide-header">
-        <h1 className="guide-logo">React + Mui + Scss</h1>
+        <h1 className="guide-logo">React + Mui + Scss + 반응형</h1>
         <nav className="nav">
           <Button
             className="btn-sidebar-toggle"

@@ -46,6 +46,7 @@ import {
   TabsGuide,
   TermGuide,
   TextFieldGuide,
+  TransferListGuide,
   TypograhpyGuide,
 } from '@/guide/';
 
@@ -106,6 +107,7 @@ export default function Router() {
             <Route path="guide-tabs" element={<TabsGuide />} />
             <Route path="guide-textfield" element={<TextFieldGuide />} />
             <Route path="guide-term" element={<TermGuide />} />
+            <Route path="guide-transfer" element={<TransferListGuide />} />
             <Route path="guide-typograph" element={<TypograhpyGuide />} />
             <Route path="guide-product" element={<ProductIndex />}>
               <Route index element={<ProductList />} />

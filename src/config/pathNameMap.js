@@ -12,8 +12,11 @@ const pathNameMap = {
   'guide-list': 'List',
   'guide-radio': 'Radio',
   'guide-popup': 'Popup',
+  'guide-search': 'Search Form',
   'guide-select': 'Select Box',
+  'guide-tabs': 'Tabs',
   'guide-textfield': 'Text Field',
+  'guide-transfer': 'Transfer',
   'guide-typograph': 'Typography',
   'guide-login': 'Login',
 };
