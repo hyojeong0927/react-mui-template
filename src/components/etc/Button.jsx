@@ -1,5 +1,8 @@
 import MuiButton from '@mui/material/Button';
+import { motion } from 'framer-motion';
 import '@/styles/components/button/button.scss';
+
+const MotionButton = motion(MuiButton);
 
 export default function Button({
   type = 'button',
@@ -28,11 +31,13 @@ export default function Button({
     .join(' ');
 
   return (
-    <MuiButton
+    <MotionButton
       type={type}
       disabled={disabled || loading}
       className={classes}
       onClick={onClick}
+      whileHover={{ scale: 1.01, boxShadow: '0 8px 15px rgba(0,0,0,0.2)' }}
+      whileTap={{ scale: 0.95 }}
       {...props}
     >
       {loading ? (
@@ -47,6 +52,6 @@ export default function Button({
           {iconRight && <span className="btn-icon">{iconRight}</span>}
         </>
       )}
-    </MuiButton>
+    </MotionButton>
   );
 }
