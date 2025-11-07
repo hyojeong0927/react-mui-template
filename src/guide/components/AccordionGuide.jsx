@@ -2,7 +2,11 @@ import { AccordionDefault } from '@/components/';
 
 export default function AccordionGuide() {
   const data = [
-    { id: '01', title: 'accordion1', content: '아코디언 콘텐츠1' },
+    {
+      id: '01',
+      title: 'accordion1',
+      content: '아코디언 콘텐츠1아코디언 콘텐츠1아코디언 콘텐츠1',
+    },
     { id: '02', title: 'accordion2', content: '아코디언 콘텐츠2' },
     { id: '03', title: 'accordion3', content: '아코디언 콘텐츠3' },
   ];

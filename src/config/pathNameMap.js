@@ -15,6 +15,7 @@ const pathNameMap = {
   'guide-select': 'Select Box',
   'guide-textfield': 'Text Field',
   'guide-typograph': 'Typography',
+  'guide-login': 'Login',
 };
 
 export default pathNameMap;

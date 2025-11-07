@@ -28,6 +28,7 @@ import {
   FormGroupGuide,
   LayoutGuide,
   ListGuide,
+  LoginPage,
   MarkupGuide,
   PopupGuide,
   ProductIndex,
@@ -91,6 +92,7 @@ export default function Router() {
             <Route path="guide-form" element={<FormGroupGuide />} />
             <Route path="guide-layout" element={<LayoutGuide />} />
             <Route path="guide-list" element={<ListGuide />} />
+            <Route path="guide-login" element={<LoginPage />} />
             <Route path="guide-markup" element={<MarkupGuide />} />
             <Route path="guide-popup" element={<PopupGuide />} />
             <Route path="guide-radio" element={<RadioGuide />} />

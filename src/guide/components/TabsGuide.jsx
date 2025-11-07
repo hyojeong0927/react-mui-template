@@ -1,3 +1,5 @@
+import { BasicTabs } from '@/components/';
+
 export default function TabsGuide() {
   return (
     <>
@@ -9,7 +11,15 @@ export default function TabsGuide() {
         <div className="guide-page__box--tit">
           <h3>제목</h3>
         </div>
-        <div className="guide-page__box--cont">내용</div>
+        <div className="guide-page__box--cont">
+          <BasicTabs
+            tabs={[
+              { label: '입출금 내역', content: '입출금 내역 콘텐츠' },
+              { label: '계좌 정보', content: '계좌 정보' },
+              { label: '설정', content: '설정' },
+            ]}
+          />
+        </div>
       </div>
     </>
   );

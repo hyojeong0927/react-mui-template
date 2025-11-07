@@ -28,7 +28,8 @@ export { default as TextFieldGuide } from './components/TextFieldGuide';
 export { default as TypograhpyGuide } from './components/TypograhpyGuide';
 // contents
 export { default as AccountPage } from './contents/AccountContent';
+export { default as LoginPage } from './contents/Login';
 export { default as ProductIndex } from './contents/ProductIndex';
 export { default as ProductList } from './contents/ProductList';
-export { default as ScrollPage } from './contents/ScrollPage';
 export { default as ProductSticky } from './contents/ProductSticky';
+export { default as ScrollPage } from './contents/ScrollPage';

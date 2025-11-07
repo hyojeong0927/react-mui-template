@@ -21,6 +21,7 @@ export default function GuideSidebar({ collapsed, setCollapsed }) {
         label: 'Contents',
         children: [
           { id: 'account', label: 'Account', to: '/guide-account' },
+          // { id: 'login', label: 'Login', to: '/guide-login' },
           { id: 'product', label: 'Products', to: '/guide-product' },
           { id: 'scroll', label: 'Scroll', to: '/guide-scroll' },
         ],
@@ -41,6 +42,7 @@ export default function GuideSidebar({ collapsed, setCollapsed }) {
           { id: 'radio', label: 'Radio', to: '/guide-radio' },
           { id: 'search', label: 'Search Form', to: '/guide-search' },
           { id: 'select', label: 'Select', to: '/guide-select' },
+          { id: 'tabs', label: 'Tabs', to: '/guide-tabs' },
           { id: 'textfield', label: 'Text Field', to: '/guide-textfield' },
           { id: 'typograph', label: 'Typography', to: '/guide-typograph' },
         ],
