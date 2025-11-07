@@ -1,146 +1,104 @@
-import * as React from 'react';
-import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
+import { useTransferList } from './useTransferList';
 
-function not(a, b) {
-  return a.filter(value => !b.includes(value));
-}
+import {
+  Button,
+  Grid,
+  Checkbox,
+  Card,
+  CardHeader,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Divider,
+} from '@mui/material';
 
-function intersection(a, b) {
-  return a.filter(value => b.includes(value));
-}
+export default function TransferList({ leftData, rightData, onChange }) {
+  const {
+    left,
+    right,
+    leftChecked,
+    rightChecked,
+    toggle,
+    toggleAll,
+    moveItems,
+    setLeft,
+    setRight,
+  } = useTransferList(leftData, rightData, onChange);
 
-export default function TransferList() {
-  const [checked, setChecked] = React.useState([]);
-  const [left, setLeft] = React.useState([0, 1, 2, 3]);
-  const [right, setRight] = React.useState([4, 5, 6, 7]);
-
-  const leftChecked = intersection(checked, left);
-  const rightChecked = intersection(checked, right);
-
-  const handleToggle = value => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    setChecked(newChecked);
-  };
-
-  const handleAllRight = () => {
-    setRight(right.concat(left));
-    setLeft([]);
-  };
-
-  const handleCheckedRight = () => {
-    setRight(right.concat(leftChecked));
-    setLeft(not(left, leftChecked));
-    setChecked(not(checked, leftChecked));
-  };
-
-  const handleCheckedLeft = () => {
-    setLeft(left.concat(rightChecked));
-    setRight(not(right, rightChecked));
-    setChecked(not(checked, rightChecked));
-  };
-
-  const handleAllLeft = () => {
-    setLeft(left.concat(right));
-    setRight([]);
-  };
-
-  const customList = items => (
-    <Paper sx={{ width: 200, height: 230, overflow: 'auto' }}>
-      <List dense component="div" role="list">
-        {items.map(value => {
-          const labelId = `transfer-list-item-${value}-label`;
-
-          return (
-            <ListItemButton
-              key={value}
-              role="listitem"
-              onClick={handleToggle(value)}
-            >
+  const renderList = (title, items) => {
+    const isLeftList = items === left;
+    const checkedList = isLeftList ? leftChecked : rightChecked;
+    return (
+      <Card>
+        <CardHeader
+          avatar={
+            <Checkbox
+              onClick={() => toggleAll(items)}
+              checked={
+                items.length !== 0 && leftChecked.length === items.length
+              }
+              indeterminate={
+                leftChecked.length !== items.length && leftChecked.length !== 0
+              }
+              disabled={items.length === 0}
+            />
+          }
+          title={title}
+        />
+        <Divider />
+        <List>
+          {items.map(item => (
+            <ListItemButton key={item.id} onClick={() => toggle(item)}>
               <ListItemIcon>
-                <Checkbox
-                  checked={checked.includes(value)}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{
-                    'aria-labelledby': labelId,
-                  }}
-                />
+                <Checkbox checked={checkedList.some(i => i.id === item.id)} />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`List item ${value + 1}`} />
+              <ListItemText primary={item.value} />
             </ListItemButton>
-          );
-        })}
-      </List>
-    </Paper>
-  );
+          ))}
+        </List>
+      </Card>
+    );
+  };
 
   return (
-    <Grid
-      container
-      spacing={2}
-      sx={{ justifyContent: 'center', alignItems: 'center' }}
-    >
-      <Grid>{customList(left)}</Grid>
+    <Grid container spacing={2} alignItems="center" justifyContent="center">
+      <Grid>{renderList('Left', left)}</Grid>
+
       <Grid>
-        <Grid container direction="column" sx={{ alignItems: 'center' }}>
+        <Grid container direction="column" alignItems="center">
           <Button
-            sx={{ my: 0.5 }}
-            variant="outlined"
-            size="small"
-            onClick={handleAllRight}
-            disabled={left.length === 0}
-            aria-label="move all right"
+            onClick={() => moveItems(left, setLeft, right, setRight, left)}
+            disabled={!left.length}
           >
             ≫
           </Button>
           <Button
-            sx={{ my: 0.5 }}
-            variant="outlined"
-            size="small"
-            onClick={handleCheckedRight}
-            disabled={leftChecked.length === 0}
-            aria-label="move selected right"
+            onClick={() =>
+              moveItems(left, setLeft, right, setRight, leftChecked)
+            }
+            disabled={!leftChecked.length}
           >
             &gt;
           </Button>
           <Button
-            sx={{ my: 0.5 }}
-            variant="outlined"
-            size="small"
-            onClick={handleCheckedLeft}
-            disabled={rightChecked.length === 0}
-            aria-label="move selected left"
+            onClick={() =>
+              moveItems(right, setRight, left, setLeft, rightChecked)
+            }
+            disabled={!rightChecked.length}
           >
             &lt;
           </Button>
           <Button
-            sx={{ my: 0.5 }}
-            variant="outlined"
-            size="small"
-            onClick={handleAllLeft}
-            disabled={right.length === 0}
-            aria-label="move all left"
+            onClick={() => moveItems(right, setRight, left, setLeft, right)}
+            disabled={!right.length}
           >
             ≪
           </Button>
         </Grid>
       </Grid>
-      <Grid>{customList(right)}</Grid>
+
+      <Grid>{renderList('Right', right)}</Grid>
     </Grid>
   );
 }

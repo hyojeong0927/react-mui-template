@@ -44,7 +44,7 @@ export default function GuideSidebar({ collapsed, setCollapsed }) {
           { id: 'select', label: 'Select', to: '/guide-select' },
           { id: 'tabs', label: 'Tabs', to: '/guide-tabs' },
           { id: 'textfield', label: 'Text Field', to: '/guide-textfield' },
-          // { id: 'transfer', label: 'Transfer', to: '/guide-transfer' },
+          { id: 'transfer', label: 'Transfer', to: '/guide-transfer' },
           { id: 'typograph', label: 'Typography', to: '/guide-typograph' },
         ],
       },
