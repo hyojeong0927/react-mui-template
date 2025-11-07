@@ -36,10 +36,10 @@ export default function TransferList({ leftData, rightData, onChange }) {
             <Checkbox
               onClick={() => toggleAll(items)}
               checked={
-                items.length !== 0 && leftChecked.length === items.length
+                items.length !== 0 && checkedList.length === items.length
               }
               indeterminate={
-                leftChecked.length !== items.length && leftChecked.length !== 0
+                checkedList.length !== items.length && checkedList.length !== 0
               }
               disabled={items.length === 0}
             />
