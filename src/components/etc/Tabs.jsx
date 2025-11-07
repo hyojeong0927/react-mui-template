@@ -27,7 +27,7 @@ function a11yProps(index) {
 export default function BasicTabs({ tabs = [] }) {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = newValue => {
+  const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
@@ -35,17 +35,17 @@ export default function BasicTabs({ tabs = [] }) {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange}>
-          {tabs.map((tab, index) => {
-            <Tab key={index} label={tab.label} {...a11yProps(index)} />;
-          })}
+          {tabs.map((tab, index) => (
+            <Tab key={index} label={tab.label} {...a11yProps(index)} />
+          ))}
         </Tabs>
-        ;
       </Box>
-      {tabs.map((tab, index) => {
-        <CustomTabPanel value={value} index={index}>
+
+      {tabs.map((tab, index) => (
+        <CustomTabPanel key={index} value={value} index={index}>
           {tab.content}
-        </CustomTabPanel>;
-      })}
+        </CustomTabPanel>
+      ))}
     </Box>
   );
 }

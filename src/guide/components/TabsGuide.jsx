@@ -9,7 +9,7 @@ export default function TabsGuide() {
 
       <div className="guide-page__box">
         <div className="guide-page__box--tit">
-          <h3>제목</h3>
+          <h3>default</h3>
         </div>
         <div className="guide-page__box--cont">
           <BasicTabs
