@@ -28,6 +28,7 @@ const ChatBot = () => {
     setLoading(true);
 
     const apiKey = import.meta.env.VITE_OPENAI_KEY;
+
     const data = {
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: input }],
