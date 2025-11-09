@@ -91,9 +91,9 @@ const ChatBot = () => {
   return (
     <Card
       sx={{
-        maxWidth: 500,
-        width: '95%',
-        margin: '50px 0',
+        maxWidth: 320,
+        width: '90%',
+        margin: '0',
         padding: 2,
         height: '60vh',
         display: 'flex',
