@@ -19,6 +19,7 @@ const pathNameMap = {
   'guide-transfer': 'Transfer',
   'guide-typograph': 'Typography',
   'guide-login': 'Login',
+  'guide-chatbot': 'Chatbot',
 };
 
 export default pathNameMap;
