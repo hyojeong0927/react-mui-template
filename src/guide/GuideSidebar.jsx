@@ -21,6 +21,7 @@ export default function GuideSidebar({ collapsed, setCollapsed }) {
         label: 'Contents',
         children: [
           { id: 'account', label: 'Account', to: '/guide-account' },
+          { id: 'chatbot', label: 'ChatBot', to: '/guide-chatbot' },
           // { id: 'login', label: 'Login', to: '/guide-login' },
           { id: 'product', label: 'Products', to: '/guide-product' },
           { id: 'scroll', label: 'Scroll', to: '/guide-scroll' },

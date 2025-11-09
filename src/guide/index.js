@@ -29,6 +29,7 @@ export { default as TransferListGuide } from './components/TransferListGuide';
 export { default as TypograhpyGuide } from './components/TypograhpyGuide';
 // contents
 export { default as AccountPage } from './contents/AccountContent';
+export { default as ChatBotContent } from './contents/ChatBotContent';
 export { default as LoginPage } from './contents/Login';
 export { default as ProductIndex } from './contents/ProductIndex';
 export { default as ProductList } from './contents/ProductList';

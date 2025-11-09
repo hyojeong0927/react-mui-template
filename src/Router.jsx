@@ -23,6 +23,7 @@ import {
   BoxGuide,
   ButtonGuide,
   ChartGuide,
+  ChatBotContent,
   CheckboxGuide,
   FloatingbarGuide,
   FormGroupGuide,
@@ -88,6 +89,7 @@ export default function Router() {
             <Route path="guide-box" element={<BoxGuide />} />
             <Route path="guide-button" element={<ButtonGuide />} />
             <Route path="guide-chart" element={<ChartGuide />} />
+            <Route path="guide-chatbot" element={<ChatBotContent />} />
             <Route path="guide-checkbox" element={<CheckboxGuide />} />
             <Route path="guide-floatingbar" element={<FloatingbarGuide />} />
             <Route path="guide-form" element={<FormGroupGuide />} />
