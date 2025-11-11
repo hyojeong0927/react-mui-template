@@ -18,7 +18,13 @@ export default function ListGuide() {
           <h3>ul</h3>
         </div>
         <div className="guide-page__box--cont">
-          <div style={{ display: 'flex', gap: '10px' }}>
+          <div
+            className="list-md"
+            style={{
+              display: 'flex',
+              gap: '10px',
+            }}
+          >
             <MixedList component="ul" listValue={dataUl} />
             <MixedList component="ul" icon="dot" listValue={dataUl} />
             <MixedList component="ul" icon="check" listValue={dataUl} />
@@ -31,7 +37,7 @@ export default function ListGuide() {
           <h3>ol</h3>
         </div>
         <div className="guide-page__box--cont">
-          <div style={{ display: 'flex', gap: '10px' }}>
+          <div className="list-md" style={{ display: 'flex', gap: '10px' }}>
             <MixedList component="ol" showNumber="text" listValue={dataOl} />
             <MixedList component="ol" showNumber="circle" listValue={dataOl} />
             <MixedList
