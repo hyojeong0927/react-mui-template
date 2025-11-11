@@ -1,0 +1,24 @@
+.title-wrap {
+  display: flex;
+  align-items: center;
+
+  &.left {
+    justify-content: flex-start;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.right {
+    justify-content: flex-end;
+  }
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  .title-btn {
+    margin-left: auto;
+  }
+}

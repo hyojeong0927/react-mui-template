@@ -45,6 +45,7 @@ import {
   StyleGuide,
   TableGuide,
   TabsGuide,
+  TitleGuide,
   TermGuide,
   TextFieldGuide,
   TransferListGuide,
@@ -109,6 +110,7 @@ export default function Router() {
             <Route path="guide-tabs" element={<TabsGuide />} />
             <Route path="guide-textfield" element={<TextFieldGuide />} />
             <Route path="guide-term" element={<TermGuide />} />
+            <Route path="guide-title" element={<TitleGuide />} />
             <Route path="guide-transfer" element={<TransferListGuide />} />
             <Route path="guide-typograph" element={<TypograhpyGuide />} />
             <Route path="guide-product" element={<ProductIndex />}>

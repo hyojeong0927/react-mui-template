@@ -13,6 +13,9 @@ export default function TypograhpyGuide() {
         </div>
         <div className="guide-page__box--cont">
           <TypographyHeading level="h1">h1. Heading</TypographyHeading>
+          <TypographyHeading level="h1" as="h3">
+            접근성과 스타일 분리 가능
+          </TypographyHeading>
           <TypographyHeading level="h2">h2. Heading</TypographyHeading>
           <TypographyHeading level="h3">h3. Heading</TypographyHeading>
           <TypographyHeading level="h4">h4. Heading</TypographyHeading>

@@ -25,6 +25,7 @@ export { default as StepGuide } from './components/StepGuide';
 export { default as TableGuide } from './components/TableGuide';
 export { default as TabsGuide } from './components/TabsGuide';
 export { default as TextFieldGuide } from './components/TextFieldGuide';
+export { default as TitleGuide } from './components/TitleGuide';
 export { default as TransferListGuide } from './components/TransferListGuide';
 export { default as TypograhpyGuide } from './components/TypograhpyGuide';
 // contents

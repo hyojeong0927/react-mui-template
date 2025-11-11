@@ -6,5 +6,6 @@ export { default as Button } from './Button';
 export { default as ChatBot } from './ChatBot';
 export { default as MixedList } from './List';
 export { default as BasicTabs } from './Tabs';
+export { default as Title } from './Title';
 export { default as TransferList } from './TransferList';
 export { default as TypographyHeading } from './TypographyHeading';
